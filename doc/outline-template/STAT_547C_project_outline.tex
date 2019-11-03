@@ -11,6 +11,7 @@
 
 \usepackage{booktabs}
 \usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{textcomp}
 
 \usepackage[sorting=none,backend=biber,bibstyle=alphabetic,citestyle=alphabetic,giveninits=true,natbib=true]{biblatex}
 \bibliography{../../ref/STAT_547C.bib} % add the title and location of your bibliography file
@@ -18,24 +19,22 @@
 \begin{document}
 
 % NOTE: You will replace the title below with your actual Title.
-\makeGenericHeader{Conditional Independence in Computational Statistics \\and Machine Learning}{Project Outline}
+\makeGenericHeader{Stein\textquotesingle s method in machine learning}{Project Outline}
 \vspace{-2cm}
-
-
 %%%%%%%%%%%%%%%%%%%
 \section{Title}
 
-The working title of my project is \emph{Conditional Independence in Computational Statistics and Machine Learning}.  
+The working title of my project is \emph{Stein\textquotesingle s method in machine learning}.  
 
 %%%%%%%%%%%%%%%%%%%
 \section{Background}
 
-Conditional independence is a key concept in probability, especially in statistical applications. The classic paper by \citet{Dawid:1979:CondIndStatTheory} presents core ideas of statistics in terms of conditional independence. Those ideas are particularly relevant to statistical theory: estimation and hypothesis testing, identifiability, and predictive sufficiency. In modern data analysis, the importance of conditional independence seems to have grown, especially in the context of computationally intensive methods in statistics and machine learning. I am interested in a literature review of the role played by conditional independence in modern data analysis, particularly on computationally intensive methods, and in initial steps towards formalizing the relationship between computational complexity, notions of statistical efficiency, and conditional independence.
+Stein's method \citep{stein1972bound} is a technique that can quantify the error in the approximation of one distribution by another in a variety of metrics \citep{ross2011fundamentals}. The method is mainly used to derive bounds on approximations as well as convergence results in a variety of disciplines (see e.g.\cite{reinert2011short} for some areas of application). In recent years, Stein's method has been introduced in the machine learning literature. \cite{gorham2015measuring,liu2016kernelized,chwialkowski2016kernel,oates2017control} used the method to design goodness of fit and sample quality tests for sampling methods and \cite{liu2016stein,zhuo2017message} achieved better performance and speed ups in variational inference using a version of Stein's discrepancy \cite{liu2016kernelized}. I am interested in gaining an understanding of Stein's method and in conducting a more in-depth analysis of Stein's variational inference.
 
 %%%%%%%%%%%%%%%%%%%
 \section{Technical aspects}
 
-The project will draw on technical aspects of the following areas: conditioning and disintegration, stochastic optimization, graphical models, computational complexity theory.
+The project will draw on technical aspects of the following areas: convergence, expectations, kernels and measures, variational inference.
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -44,11 +43,10 @@ The project will draw on technical aspects of the following areas: conditioning 
 The key references for this project are:
 
 \begin{itemize}
-  \item \cite{Dawid:1980:CondIndStatOp}, as mentioned above.
-  \item \cite{Dawid:1979:CondIndStatTheory} is a technical version of \cite{Dawid:1980:CondIndStatOp}, with additional material.
-  \item \cite[][Ch.~6]{Kallenberg:2002} is a key technical reference for conditioning.
-  \item \cite[][Ch.~8]{Bishop:2006} is a gentle introduction to graphical models; \cite{Lauritzen:1996:GraphMod,Koller:Friedman:2009:PGM} are complete references.
-  \item Based on a preliminary literature search, some references for methods that rely on conditional independence: stochastic optimization \cite{Bottou:2010} and stochastic variational inference \cite{Hoffman:etal:2013:SVI}; efficient (lifted) inference in statistical relational models \cite{Niepert:Domingos,Niepert:vdBroeck:2014:TractExch}
+  \item \cite{ross2011fundamentals}, provides a review fo Stein's method and examples for different metrics and distributions.
+  \item \cite{liu2016stein} the paper introduces Stein's variational inference.
+  \item \cite{zhuo2017message} improves the method of \citet{liu2016stein}.
+  \item \cite{liu2016kernelized, chwialkowski2016kernel} are foundational works for \cite{liu2016stein} as they introduce Stein's discrepancy and the derivation of the optimal result minimizing the discrepancy. The results are then adopted in the variational inference context.
 \end{itemize}
 
 
@@ -57,21 +55,19 @@ The key references for this project are:
 
 I will carry out this project with the following sequence of steps: 
 \begin{enumerate}
-  \item I will map ideas presented in a statistical theoretical framework in the papers of \citet{Dawid:1979:CondIndStatTheory,Dawid:1980:CondIndStatOp} to one that takes into account computational requirements of  inference algorithms, with a focus on sufficiency and adequacy.
-  \item I will review methods from computational statistics and machine learning that rely on conditional independence. 
-  \item I will focus on one of these methods for an in-depth study of the effects of conditional independence on computational complexity.
+  \item I will introduce Stein's method and derive some of the theoretical results needed as background for the understanding of Stein's variational inference.
+  \item I will provide a more theoretical introduction to Reproducing Kernel Hilbert Space (RKHS).
+  \item I will reformulate Stein's variational inference of \citet{liu2016stein} in a more rigorous probabilistic way. 
+  \item If time allows, I will also discuss \citet{zhuo2017message} in similar terms. 
 \end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%
 \section{Why I'm interested in this topic}
 
-I am interested in doing research that applies probability to problems in machine learning, and this seems like a great way to get started. 
-
+I am interested in variational inference and Markov Chain Monte Carlo methods and it seems like Stein's method can provide improvements to existing methods in the literature. I hope a deeper understanding of the method can help me find new areas of research.
 
 %%%%%%%%%%%%%%%%%%%
 \printbibliography
-
-
 \end{document}
 

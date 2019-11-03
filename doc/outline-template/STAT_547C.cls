@@ -16,7 +16,7 @@
 
 %% --- Package loading ---
 %\RequirePackage{ETHlogo}
-\RequirePackage[latin1]{inputenc}
+\RequirePackage[utf8]{inputenc}
 
 %% --- Special commands for package and class files ---
 
