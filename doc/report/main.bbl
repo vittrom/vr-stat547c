@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.0 $
+% $ biblatex bbl format version 3.1 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,5 +16,750 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{stein1972bound}{inproceedings}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=6a2cfb50317c65fe2e57051d99c0380c}{%
+           family={Stein},
+           familyi={S\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {The Regents of the University of California}%
+      }
+      \strng{namehash}{e843ccbb7bec0f354b38bb15f1026bb2}
+      \strng{fullhash}{e843ccbb7bec0f354b38bb15f1026bb2}
+      \strng{bibnamehash}{e843ccbb7bec0f354b38bb15f1026bb2}
+      \strng{authorbibnamehash}{e843ccbb7bec0f354b38bb15f1026bb2}
+      \strng{authornamehash}{e843ccbb7bec0f354b38bb15f1026bb2}
+      \strng{authorfullhash}{e843ccbb7bec0f354b38bb15f1026bb2}
+      \field{labelalpha}{Ste+72}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Sixth Berkeley Symposium on Mathematical Statistics and Probability, Volume 2: Probability Theory}
+      \field{title}{A bound for the error in the normal approximation to the distribution of a sum of dependent random variables}
+      \field{year}{1972}
+    \endentry
+    \entry{Franceschetti:2006:CNL:1148663.1148705}{article}{}
+      \name{author}{2}{}{%
+        {{hash=44f9b671942bb2e4a2477717529f1d52}{%
+           family={Franceschetti},
+           familyi={F\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=13179c3a790c1fe8eb53981bfe066cc8}{%
+           family={Meester},
+           familyi={M\bibinitperiod},
+           given={Ronald},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Piscataway, NJ, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Press}%
+      }
+      \strng{namehash}{00368f578ecd9e61fa7d8ac11131f134}
+      \strng{fullhash}{00368f578ecd9e61fa7d8ac11131f134}
+      \strng{bibnamehash}{00368f578ecd9e61fa7d8ac11131f134}
+      \strng{authorbibnamehash}{00368f578ecd9e61fa7d8ac11131f134}
+      \strng{authornamehash}{00368f578ecd9e61fa7d8ac11131f134}
+      \strng{authorfullhash}{00368f578ecd9e61fa7d8ac11131f134}
+      \field{labelalpha}{FM06}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1063-6692}
+      \field{journaltitle}{IEEE/ACM Trans. Netw.}
+      \field{month}{6}
+      \field{number}{SI}
+      \field{title}{{Critical Node Lifetimes in Random Networks via the Chen-Stein Method}}
+      \field{volume}{14}
+      \field{year}{2006}
+      \field{pages}{2831\bibrangedash 2837}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/TIT.2006.874545
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/TIT.2006.874545
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/TIT.2006.874545
+      \endverb
+      \keyw{ad-hoc networks,percolation theory,poisson approximation,random networks,sensor networks}
+    \endentry
+    \entry{reinert2000probabilistic}{article}{}
+      \name{author}{3}{}{%
+        {{hash=c027c26d6f23e6a3a5cb8b735495da1a}{%
+           family={Reinert},
+           familyi={R\bibinitperiod},
+           given={Gesine},
+           giveni={G\bibinitperiod}}}%
+        {{hash=66c3098b70a0524d2525a0aed1ab6363}{%
+           family={Schbath},
+           familyi={S\bibinitperiod},
+           given={Sophie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=75962bba95c5349d125f124ce197a2b4}{%
+           family={Waterman},
+           familyi={W\bibinitperiod},
+           given={Michael\bibnamedelima S},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mary Ann Liebert, Inc.}%
+      }
+      \strng{namehash}{61991503a91143b84e29b0ef9e0b6a70}
+      \strng{fullhash}{61991503a91143b84e29b0ef9e0b6a70}
+      \strng{bibnamehash}{61991503a91143b84e29b0ef9e0b6a70}
+      \strng{authorbibnamehash}{61991503a91143b84e29b0ef9e0b6a70}
+      \strng{authornamehash}{61991503a91143b84e29b0ef9e0b6a70}
+      \strng{authorfullhash}{61991503a91143b84e29b0ef9e0b6a70}
+      \field{labelalpha}{RSW00}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational Biology}
+      \field{number}{1-2}
+      \field{title}{Probabilistic and statistical properties of words: an overview}
+      \field{volume}{7}
+      \field{year}{2000}
+      \field{pages}{1\bibrangedash 46}
+      \range{pages}{46}
+    \endentry
+    \entry{ball1990poisson}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1f8793596bcc73ac248234b6eb55d8a1}{%
+           family={Ball},
+           familyi={B\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=6d0179dde3541806e68888331c832b4c}{%
+           family={Barbour},
+           familyi={B\bibinitperiod},
+           given={AD},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{30c0852a7043f4c0287929296c775f89}
+      \strng{fullhash}{30c0852a7043f4c0287929296c775f89}
+      \strng{bibnamehash}{30c0852a7043f4c0287929296c775f89}
+      \strng{authorbibnamehash}{30c0852a7043f4c0287929296c775f89}
+      \strng{authornamehash}{30c0852a7043f4c0287929296c775f89}
+      \strng{authorfullhash}{30c0852a7043f4c0287929296c775f89}
+      \field{labelalpha}{BB90}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of applied probability}
+      \field{number}{3}
+      \field{title}{Poisson approximation for some epidemic models}
+      \field{volume}{27}
+      \field{year}{1990}
+      \field{pages}{479\bibrangedash 490}
+      \range{pages}{12}
+    \endentry
+    \entry{reinert2011short}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c027c26d6f23e6a3a5cb8b735495da1a}{%
+           family={Reinert},
+           familyi={R\bibinitperiod},
+           given={Gesine},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{c027c26d6f23e6a3a5cb8b735495da1a}
+      \strng{fullhash}{c027c26d6f23e6a3a5cb8b735495da1a}
+      \strng{bibnamehash}{c027c26d6f23e6a3a5cb8b735495da1a}
+      \strng{authorbibnamehash}{c027c26d6f23e6a3a5cb8b735495da1a}
+      \strng{authornamehash}{c027c26d6f23e6a3a5cb8b735495da1a}
+      \strng{authorfullhash}{c027c26d6f23e6a3a5cb8b735495da1a}
+      \field{labelalpha}{Rei11}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Lecture Notes}
+      \field{title}{A short introduction to Stein's method}
+      \field{year}{2011}
+    \endentry
+    \entry{oates2017control}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d3a950840e504ac4aa93f8f60e0f3f0b}{%
+           family={Oates},
+           familyi={O\bibinitperiod},
+           given={Chris\bibnamedelima J},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=29d5a93ca5a81c990256c62b097f65bb}{%
+           family={Girolami},
+           familyi={G\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=23c0c7d947415c68f4949167db1ca938}{%
+           family={Chopin},
+           familyi={C\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{6dda7030875bf5708e95f83ff500d64d}
+      \strng{fullhash}{6dda7030875bf5708e95f83ff500d64d}
+      \strng{bibnamehash}{6dda7030875bf5708e95f83ff500d64d}
+      \strng{authorbibnamehash}{6dda7030875bf5708e95f83ff500d64d}
+      \strng{authornamehash}{6dda7030875bf5708e95f83ff500d64d}
+      \strng{authorfullhash}{6dda7030875bf5708e95f83ff500d64d}
+      \field{labelalpha}{OGC17}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Royal Statistical Society: Series B (Statistical Methodology)}
+      \field{number}{3}
+      \field{title}{Control functionals for Monte Carlo integration}
+      \field{volume}{79}
+      \field{year}{2017}
+      \field{pages}{695\bibrangedash 718}
+      \range{pages}{24}
+    \endentry
+    \entry{oates2019convergence}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{4}{}{%
+        {{hash=d3a950840e504ac4aa93f8f60e0f3f0b}{%
+           family={Oates},
+           familyi={O\bibinitperiod},
+           given={Chris\bibnamedelima J},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=1e07ee37ba87030442ab874a823d3faa}{%
+           family={Cockayne},
+           familyi={C\bibinitperiod},
+           given={Jon},
+           giveni={J\bibinitperiod}}}%
+        {{hash=31d7321b8c9b94cf54eb1be84a951953}{%
+           family={Briol},
+           familyi={B\bibinitperiod},
+           given={Fran{ç}ois-Xavier},
+           giveni={F\bibinithyphendelim X\bibinitperiod}}}%
+        {{hash=29d5a93ca5a81c990256c62b097f65bb}{%
+           family={Girolami},
+           familyi={G\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Bernoulli Society for Mathematical Statistics}%
+        {Probability}%
+      }
+      \strng{namehash}{7ff525b95009cb3c55237285515040c0}
+      \strng{fullhash}{188c9e62159d7aa7aa159dcc6d675f18}
+      \strng{bibnamehash}{7ff525b95009cb3c55237285515040c0}
+      \strng{authorbibnamehash}{7ff525b95009cb3c55237285515040c0}
+      \strng{authornamehash}{7ff525b95009cb3c55237285515040c0}
+      \strng{authorfullhash}{188c9e62159d7aa7aa159dcc6d675f18}
+      \field{labelalpha}{Oat+19}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bernoulli}
+      \field{number}{2}
+      \field{title}{{Convergence rates for a class of estimators based on Stein’s method}}
+      \field{volume}{25}
+      \field{year}{2019}
+      \field{pages}{1141\bibrangedash 1159}
+      \range{pages}{19}
+    \endentry
+    \entry{gorham2015measuring}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=e0d23d5f468a9825ef8003b0d70f86ca}{%
+           family={Gorham},
+           familyi={G\bibinitperiod},
+           given={Jackson},
+           giveni={J\bibinitperiod}}}%
+        {{hash=cd367b2be7bf64c1563bf3d2a5584b5b}{%
+           family={Mackey},
+           familyi={M\bibinitperiod},
+           given={Lester},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{a778afc5960c27633019a1e09e0141e6}
+      \strng{fullhash}{a778afc5960c27633019a1e09e0141e6}
+      \strng{bibnamehash}{a778afc5960c27633019a1e09e0141e6}
+      \strng{authorbibnamehash}{a778afc5960c27633019a1e09e0141e6}
+      \strng{authornamehash}{a778afc5960c27633019a1e09e0141e6}
+      \strng{authorfullhash}{a778afc5960c27633019a1e09e0141e6}
+      \field{labelalpha}{GM15}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems}
+      \field{title}{Measuring sample quality with Stein's method}
+      \field{year}{2015}
+      \field{pages}{226\bibrangedash 234}
+      \range{pages}{9}
+    \endentry
+    \entry{liu2016kernelized}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=e8c0010ab32e4255b70bd8d9fefdf5cd}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=4ee154247efd44bd9bd762630838b953}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5010abb47d34a51acdafb266a811dc5f}{%
+           family={Jordan},
+           familyi={J\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{39f03a68636be1164fca0815520a5641}
+      \strng{fullhash}{39f03a68636be1164fca0815520a5641}
+      \strng{bibnamehash}{39f03a68636be1164fca0815520a5641}
+      \strng{authorbibnamehash}{39f03a68636be1164fca0815520a5641}
+      \strng{authornamehash}{39f03a68636be1164fca0815520a5641}
+      \strng{authorfullhash}{39f03a68636be1164fca0815520a5641}
+      \field{labelalpha}{LLJ16}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International conference on machine learning}
+      \field{title}{A kernelized Stein discrepancy for goodness-of-fit tests}
+      \field{year}{2016}
+      \field{pages}{276\bibrangedash 284}
+      \range{pages}{9}
+    \endentry
+    \entry{chwialkowski2016kernel}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=3338b802840bdb1b7c4d7be4742a8794}{%
+           family={Chwialkowski},
+           familyi={C\bibinitperiod},
+           given={Kacper},
+           giveni={K\bibinitperiod}}}%
+        {{hash=4af76d09b9a73dca4518622ed35a54f1}{%
+           family={Strathmann},
+           familyi={S\bibinitperiod},
+           given={Heiko},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1f42dc1a2d390bd84511cbccb6397013}{%
+           family={Gretton},
+           familyi={G\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{2}{%
+        {JMLR: Workshop}%
+        {Conference Proceedings}%
+      }
+      \strng{namehash}{9157b83f7c62428875cfd47a870557e0}
+      \strng{fullhash}{9157b83f7c62428875cfd47a870557e0}
+      \strng{bibnamehash}{9157b83f7c62428875cfd47a870557e0}
+      \strng{authorbibnamehash}{9157b83f7c62428875cfd47a870557e0}
+      \strng{authornamehash}{9157b83f7c62428875cfd47a870557e0}
+      \strng{authorfullhash}{9157b83f7c62428875cfd47a870557e0}
+      \field{labelalpha}{CSG16}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A kernel test of goodness of fit}
+      \field{year}{2016}
+    \endentry
+    \entry{yang2019stein}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=ceda104390796419184e130254f320cd}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Jiasen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=34361294e7f044ab154d476c5b3ee0a6}{%
+           family={Rao},
+           familyi={R\bibinitperiod},
+           given={Vinayak},
+           giveni={V\bibinitperiod}}}%
+        {{hash=1933bd1245dcf04297b9c3cb5dbfa7a7}{%
+           family={Neville},
+           familyi={N\bibinitperiod},
+           given={Jennifer},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{463a78031793fc1c0213288097aa047a}
+      \strng{fullhash}{463a78031793fc1c0213288097aa047a}
+      \strng{bibnamehash}{463a78031793fc1c0213288097aa047a}
+      \strng{authorbibnamehash}{463a78031793fc1c0213288097aa047a}
+      \strng{authornamehash}{463a78031793fc1c0213288097aa047a}
+      \strng{authorfullhash}{463a78031793fc1c0213288097aa047a}
+      \field{labelalpha}{YRN19}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The 22nd International Conference on Artificial Intelligence and Statistics}
+      \field{title}{A Stein--Papangelou Goodness-of-Fit Test for Point Processes}
+      \field{year}{2019}
+      \field{pages}{226\bibrangedash 235}
+      \range{pages}{10}
+    \endentry
+    \entry{kanagawa2019kernel}{article}{}
+      \name{author}{5}{}{%
+        {{hash=e597e8df42e534db8c2c48bf3ba0a7e7}{%
+           family={Kanagawa},
+           familyi={K\bibinitperiod},
+           given={Heishiro},
+           giveni={H\bibinitperiod}}}%
+        {{hash=bf6027c97eef780bb7d15d17ab98fde0}{%
+           family={Jitkrittum},
+           familyi={J\bibinitperiod},
+           given={Wittawat},
+           giveni={W\bibinitperiod}}}%
+        {{hash=cd367b2be7bf64c1563bf3d2a5584b5b}{%
+           family={Mackey},
+           familyi={M\bibinitperiod},
+           given={Lester},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e9c11e7f6e771dbb75fdfa98f94e91a0}{%
+           family={Fukumizu},
+           familyi={F\bibinitperiod},
+           given={Kenji},
+           giveni={K\bibinitperiod}}}%
+        {{hash=1f42dc1a2d390bd84511cbccb6397013}{%
+           family={Gretton},
+           familyi={G\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{08c43803f7c1d19bdb1df72ce0517734}
+      \strng{fullhash}{8ddd42905122d9659bf974ab04c935ca}
+      \strng{bibnamehash}{08c43803f7c1d19bdb1df72ce0517734}
+      \strng{authorbibnamehash}{08c43803f7c1d19bdb1df72ce0517734}
+      \strng{authornamehash}{08c43803f7c1d19bdb1df72ce0517734}
+      \strng{authorfullhash}{8ddd42905122d9659bf974ab04c935ca}
+      \field{labelalpha}{Kan+19}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1907.00586}
+      \field{title}{A Kernel Stein Test for Comparing Latent Variable Models}
+      \field{year}{2019}
+    \endentry
+    \entry{liu2016stein}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=e8c0010ab32e4255b70bd8d9fefdf5cd}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=63d92a7422ae89c6fc92636092efb6cc}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Dilin},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \strng{fullhash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \strng{bibnamehash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \strng{authorbibnamehash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \strng{authornamehash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \strng{authorfullhash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \field{labelalpha}{LW16}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in neural information processing systems}
+      \field{title}{Stein variational gradient descent: A general purpose bayesian inference algorithm}
+      \field{year}{2016}
+      \field{pages}{2378\bibrangedash 2386}
+      \range{pages}{9}
+    \endentry
+    \entry{zhuo2017message}{article}{}
+      \name{author}{6}{}{%
+        {{hash=2d57fd9ff469da98a9eb5f5a5d7e3a25}{%
+           family={Zhuo},
+           familyi={Z\bibinitperiod},
+           given={Jingwei},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9d9ac6815e27331ba6620def723e357f}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Chang},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2b4fd9901f20457c1216777514978c3c}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Jiaxin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7a47a154652ccc647a0e6adf1570095a}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d78d9f118cf4ab50783df878af0fadb4}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Ning},
+           giveni={N\bibinitperiod}}}%
+        {{hash=4ac36eed64badd6f195e86aeecd037a7}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{751726f47860319a46f3a71ee0ae7c46}
+      \strng{fullhash}{8985ca32ef369afbf1a8e2cd2138ee77}
+      \strng{bibnamehash}{751726f47860319a46f3a71ee0ae7c46}
+      \strng{authorbibnamehash}{751726f47860319a46f3a71ee0ae7c46}
+      \strng{authornamehash}{751726f47860319a46f3a71ee0ae7c46}
+      \strng{authorfullhash}{8985ca32ef369afbf1a8e2cd2138ee77}
+      \field{labelalpha}{Zhu+17}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1711.04425}
+      \field{title}{Message passing stein variational gradient descent}
+      \field{year}{2017}
+    \endentry
+    \entry{wang2017stein}{article}{}
+      \name{author}{3}{}{%
+        {{hash=63d92a7422ae89c6fc92636092efb6cc}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Dilin},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4d931401f9724575893a65bc3a03cfb7}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Zhe},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=e8c0010ab32e4255b70bd8d9fefdf5cd}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{faecb19842ddbed5680375e7fd26ef2a}
+      \strng{fullhash}{faecb19842ddbed5680375e7fd26ef2a}
+      \strng{bibnamehash}{faecb19842ddbed5680375e7fd26ef2a}
+      \strng{authorbibnamehash}{faecb19842ddbed5680375e7fd26ef2a}
+      \strng{authornamehash}{faecb19842ddbed5680375e7fd26ef2a}
+      \strng{authorfullhash}{faecb19842ddbed5680375e7fd26ef2a}
+      \field{labelalpha}{WZL17}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1711.07168}
+      \field{title}{Stein variational message passing for continuous graphical models}
+      \field{year}{2017}
+    \endentry
+    \entry{han2018stein}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8efb16654df241d885e2e492a3eda10a}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e8c0010ab32e4255b70bd8d9fefdf5cd}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \strng{fullhash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \strng{bibnamehash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \strng{authorbibnamehash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \strng{authornamehash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \strng{authorfullhash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \field{labelalpha}{HL18}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1806.02775}
+      \field{title}{Stein variational gradient descent without gradient}
+      \field{year}{2018}
+    \endentry
+    \entry{shaloudegi2018adaptive}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f472981dc2e182c36db5b8ef6e7d2bcb}{%
+           family={Shaloudegi},
+           familyi={S\bibinitperiod},
+           given={Kiarash},
+           giveni={K\bibinitperiod}}}%
+        {{hash=c7ecbb1ab74b26d7ebc701fc4ad0f51d}{%
+           family={Gy{ö}rgy},
+           familyi={G\bibinitperiod},
+           given={Andr{á}s},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{78bdd304719da5cf2ad118bff79446f6}
+      \strng{fullhash}{78bdd304719da5cf2ad118bff79446f6}
+      \strng{bibnamehash}{78bdd304719da5cf2ad118bff79446f6}
+      \strng{authorbibnamehash}{78bdd304719da5cf2ad118bff79446f6}
+      \strng{authornamehash}{78bdd304719da5cf2ad118bff79446f6}
+      \strng{authorfullhash}{78bdd304719da5cf2ad118bff79446f6}
+      \field{labelalpha}{SG18}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1806.03816}
+      \field{title}{Adaptive MCMC via Combining Local Samplers}
+      \field{year}{2018}
+    \endentry
+    \entry{chen2019stein}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{7}{}{%
+        {{hash=aa6f2ffd8b7e16f2089be46e2f22e276}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Wilson\bibnamedelima Ye},
+           giveni={W\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=54699f3738b8a3aec1f45e08c360025e}{%
+           family={Barp},
+           familyi={B\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=31d7321b8c9b94cf54eb1be84a951953}{%
+           family={Briol},
+           familyi={B\bibinitperiod},
+           given={Fran{ç}ois-Xavier},
+           giveni={F\bibinithyphendelim X\bibinitperiod}}}%
+        {{hash=e0d23d5f468a9825ef8003b0d70f86ca}{%
+           family={Gorham},
+           familyi={G\bibinitperiod},
+           given={Jackson},
+           giveni={J\bibinitperiod}}}%
+        {{hash=29d5a93ca5a81c990256c62b097f65bb}{%
+           family={Girolami},
+           familyi={G\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cd367b2be7bf64c1563bf3d2a5584b5b}{%
+           family={Mackey},
+           familyi={M\bibinitperiod},
+           given={Lester},
+           giveni={L\bibinitperiod}}}%
+        {{hash=edd3885eb43eedb65e0fad7c91a4ce8b}{%
+           family={Oates},
+           familyi={O\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{1738b4d60c7ead743a4968866f4c4c63}
+      \strng{fullhash}{075a6e9dd692932e09f7ed423fb0d570}
+      \strng{bibnamehash}{1738b4d60c7ead743a4968866f4c4c63}
+      \strng{authorbibnamehash}{1738b4d60c7ead743a4968866f4c4c63}
+      \strng{authornamehash}{1738b4d60c7ead743a4968866f4c4c63}
+      \strng{authorfullhash}{075a6e9dd692932e09f7ed423fb0d570}
+      \field{labelalpha}{Che+19}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1905.03673}
+      \field{title}{Stein Point Markov Chain Monte Carlo}
+      \field{year}{2019}
+    \endentry
+    \entry{ross2011fundamentals}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=dfc88d7353ff162c14a12995de6774dc}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Nathan},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {The Institute of Mathematical Statistics}%
+        {the Bernoulli Society}%
+      }
+      \strng{namehash}{0d15f40dc4510aaf194bcd88b113e426}
+      \strng{fullhash}{0d15f40dc4510aaf194bcd88b113e426}
+      \strng{bibnamehash}{0d15f40dc4510aaf194bcd88b113e426}
+      \strng{authorbibnamehash}{0d15f40dc4510aaf194bcd88b113e426}
+      \strng{authornamehash}{0d15f40dc4510aaf194bcd88b113e426}
+      \strng{authorfullhash}{0d15f40dc4510aaf194bcd88b113e426}
+      \field{labelalpha}{Ros+11}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Probability Surveys}
+      \field{title}{Fundamentals of Stein's method}
+      \field{volume}{8}
+      \field{year}{2011}
+      \field{pages}{210\bibrangedash 293}
+      \range{pages}{84}
+    \endentry
+    \entry{barp2019minimum}{article}{}
+      \name{author}{5}{}{%
+        {{hash=54699f3738b8a3aec1f45e08c360025e}{%
+           family={Barp},
+           familyi={B\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a085718a4c54490a5b44a3bc69b8ee08}{%
+           family={Briol},
+           familyi={B\bibinitperiod},
+           given={Francois-Xavier},
+           giveni={F\bibinithyphendelim X\bibinitperiod}}}%
+        {{hash=f3476f0655d637999146240842a72d06}{%
+           family={Duncan},
+           familyi={D\bibinitperiod},
+           given={Andrew\bibnamedelima B},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=29d5a93ca5a81c990256c62b097f65bb}{%
+           family={Girolami},
+           familyi={G\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cd367b2be7bf64c1563bf3d2a5584b5b}{%
+           family={Mackey},
+           familyi={M\bibinitperiod},
+           given={Lester},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7f829119d0e3557b74c2c2f6216a6cf}
+      \strng{fullhash}{3ae04842581380d3df8f580398f01eea}
+      \strng{bibnamehash}{c7f829119d0e3557b74c2c2f6216a6cf}
+      \strng{authorbibnamehash}{c7f829119d0e3557b74c2c2f6216a6cf}
+      \strng{authornamehash}{c7f829119d0e3557b74c2c2f6216a6cf}
+      \strng{authorfullhash}{3ae04842581380d3df8f580398f01eea}
+      \field{labelalpha}{Bar+19}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1906.08283}
+      \field{title}{Minimum Stein Discrepancy Estimators}
+      \field{year}{2019}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 

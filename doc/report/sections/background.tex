@@ -4,6 +4,28 @@
 
 \section{Background}
 
+Stein's method, introduced by \citet{stein1972bound}, is a popular technique used in probability theory to prove approximation and limit theorems. Applications span several fields, from network analysis \citep{Franceschetti:2006:CNL:1148663.1148705} to sequence analysis in genetics \citep{reinert2000probabilistic} and the study of epidemic models \citep{ball1990poisson}, for more examples of fields of application see \cite{reinert2011short}. Despite the large variety of fields of application, Stein's method has been, until recently, solely used in theoretical statistics. However, the work of \citep{oates2017control,oates2019convergence,gorham2015measuring, liu2016kernelized} related ideas from Stein's method to problems in computational statistics and machine learning, motivating a large body of literature in the area. Examples of  applications of Stein's method in machine learning include goodness of fit tests \cite{liu2016kernelized,chwialkowski2016kernel,yang2019stein, kanagawa2019kernel}, variational inference \cite{liu2016stein,zhuo2017message, wang2017stein, han2018stein} and Markov chain Monte Carlo \cite{shaloudegi2018adaptive,chen2019stein}. 
+
+This paper presents the work of \citet{liu2016stein} on Stein Variational Gradient Descent (SVGD). First, we introduce Stein's method and concepts necessary to understand SVGD. Next, in \Cref{rest}, we detail SVGD and discuss future research directions.
+
+\subsection{Stein's method}
+\citet{ross2011fundamentals} describe Stein's method as based on two components: the first, a framework to convert the problem of bounding the error in the approximation of one distribution of interest by another into a problem of bounding the expectation of a certain functional of the random variable of interest. The second component of Stein’s method is a collection of techniques to bound the expectation appearing in the first component \cite{ross2011fundamentals}.
+
+More formally, and here we borrow some of the notation from \cite{barp2019minimum}, let $(\Omega, \calH)$ be a measurable space and denote by $\calP_{\Omega}$  the set of probability measures on $(\Omega, \calH)$. Further let $\calP_{E} \subset \calP_{\Omega}$ be the set of probability measures on the measurable space $(E, \calE)$ with $E \subset \Omega$ and $\calE \subset \calH$. Define $D: \calP_{E} \times \calP_{E} \rightarrow \bbR_+$ as
+
+\begin{equation}\label{IPM}
+D_{\calE}(\bbQ, \bbP) = \sup_{f \in \calE}\left|\int_E f(x)d\bbQ - \int_E f(x)d\bbP\right|, \ x \in E
+\end{equation}
+
+a measurable function that quantifies the discrepancy between two probability measures $\bbQ,\bbP \in \calP_{E}$, where $f$ is a measurable function in $\calE_+^{f_n}$, the set of positive $\calE$-measurable functions. Furthermore, let $\Gamma(\calY) \equiv \{f: E \rightarrow \calY \}$, a map $\calS_{\bbP}: \calG \subset \Gamma(\bbR^d) \rightarrow \Gamma(\bbR)$ is a Stein operator over a Stein class $\calG$ if $\int_E \calS_{\bbP}[f]d\bbP = 0 \ \forall f \in \calG$ for any $\bbP$. Using the definition in \Cref{IPM}, the Stein discrepancy (SD) can be defined as 
+\begin{equation}\label{stein_discrepancy}
+SD_{\calS_{\bbP}[\calG]}(\bbQ,\bbP) = \sup_{f \in \calS_{\bbP}[\calG]} \left|\int_E f(x)d\bbQ - \int_E f(x)d\bbP \right| = \sup_{g \in \calG}\left|\int_E \calS_{\bbP}[g]d\bbQ \right|, \ x \in E
+\end{equation}
+
+The first component of Stein's method transforms the problem of bounding \Cref{IPM} to the problem of bounding \Cref{stein_discrepancy}. The second component of Stein's method corresponds to a set of techniques to bound \Cref{stein_discrepancy}. Depending on the measurable space and probability measure $\bbQ$ chosen, the form of the Stein operator and the techniques needed to bound SD differ. The discussion of such techniques is not necessary for an understanding of the rest of the paper, hence, we refer the reader to \cite{ross2011fundamentals} for some 
+
+
+
 
 
 % ...
