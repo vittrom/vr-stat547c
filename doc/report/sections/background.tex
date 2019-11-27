@@ -8,24 +8,61 @@ Stein's method, introduced by \citet{stein1972bound}, is a popular technique use
 
 This paper presents the work of \citet{liu2016stein} on Stein Variational Gradient Descent (SVGD). First, we introduce Stein's method and concepts necessary to understand SVGD. Next, in \Cref{rest}, we detail SVGD and discuss future research directions.
 
-\subsection{Stein's method}
+\subsection{Stein's method}\label{stein_def}
 \citet{ross2011fundamentals} describe Stein's method as based on two components: the first, a framework to convert the problem of bounding the error in the approximation of one distribution of interest by another into a problem of bounding the expectation of a certain functional of the random variable of interest. The second component of Stein’s method is a collection of techniques to bound the expectation appearing in the first component \cite{ross2011fundamentals}.
 
-More formally, and here we borrow some of the notation from \cite{barp2019minimum}, let $(\Omega, \calH)$ be a measurable space and denote by $\calP_{\Omega}$  the set of probability measures on $(\Omega, \calH)$. Further let $\calP_{E} \subset \calP_{\Omega}$ be the set of probability measures on the measurable space $(E, \calE)$ with $E \subset \Omega$ and $\calE \subset \calH$. Define $D: \calP_{E} \times \calP_{E} \rightarrow \bbR_+$ as
+More formally, and here we borrow some of the notation from \cite{barp2019minimum}, let $(\Omega, \calA)$ be a measurable space and denote by $\calP_{\Omega}$  the set of probability measures on $(\Omega, \calA)$. Further let $\calP_{E} \subset \calP_{\Omega}$ be the set of probability measures on the measurable space $(E, \calE)$ with $E \subset \Omega$ and $\calE \subset \calA$. Define $D: \calP_{E} \times \calP_{E} \rightarrow \bbR_+$ as
 
 \begin{equation}\label{IPM}
-D_{\calE}(\bbQ, \bbP) = \sup_{f \in \calE}\left|\int_E f(x)d\bbQ - \int_E f(x)d\bbP\right|, \ x \in E
+D_{\calE}(\bbP, \bbQ) = \sup_{f \in \calE^{f_n}}\left|\int_E f(x)d\bbP - \int_E f(x)d\bbQ\right|, \ x \in E
 \end{equation}
 
-a measurable function that quantifies the discrepancy between two probability measures $\bbQ,\bbP \in \calP_{E}$, where $f$ is a measurable function in $\calE_+^{f_n}$, the set of positive $\calE$-measurable functions. Furthermore, let $\Gamma(\calY) \equiv \{f: E \rightarrow \calY \}$, a map $\calS_{\bbP}: \calG \subset \Gamma(\bbR^d) \rightarrow \Gamma(\bbR)$ is a Stein operator over a Stein class $\calG$ if $\int_E \calS_{\bbP}[f]d\bbP = 0 \ \forall f \in \calG$ for any $\bbP$. Using the definition in \Cref{IPM}, the Stein discrepancy (SD) can be defined as 
+a measurable function that quantifies the discrepancy between two probability measures $\bbQ,\bbP \in \calP_{E}$, with $D_{\calE}(\bbP, \bbQ) = 0 \iff \bbQ= \bbP$, where $f$ is a measurable function in $\calE^{f_n}$, the set of $\calE$-measurable functions. Furthermore, let $\Gamma(\calY) \equiv \{f: E \rightarrow \calY \}$, a map $\calS_{\bbP}: \calG \subset \Gamma(\calY) \rightarrow \Gamma(\bbR)$ is a Stein operator over a Stein class $\calG$ if $\int_E \calS_{\bbP}[f]d\bbP = 0 \ \forall f \in \calG$ for any $\bbP$. Using the definition in \Cref{IPM}, the Stein discrepancy (SD) can be defined as 
 \begin{equation}\label{stein_discrepancy}
-SD_{\calS_{\bbP}[\calG]}(\bbQ,\bbP) = \sup_{f \in \calS_{\bbP}[\calG]} \left|\int_E f(x)d\bbQ - \int_E f(x)d\bbP \right| = \sup_{g \in \calG}\left|\int_E \calS_{\bbP}[g]d\bbQ \right|, \ x \in E
+SD_{\calS_{\bbP}[\calG]}(\bbP,\bbQ) = \sup_{f \in \calS_{\bbP}[\calG]} \left|\int_E f(x)d\bbP - \int_E f(x)d\bbQ \right| = \sup_{g \in \calG}\left|\int_E \calS_{\bbP}[g]d\bbQ \right|, \ x \in E
 \end{equation}
 
-The first component of Stein's method transforms the problem of bounding \Cref{IPM} to the problem of bounding \Cref{stein_discrepancy}. The second component of Stein's method corresponds to a set of techniques to bound \Cref{stein_discrepancy}. Depending on the measurable space and probability measure $\bbQ$ chosen, the form of the Stein operator and the techniques needed to bound SD differ. The discussion of such techniques is not necessary for an understanding of the rest of the paper, hence, we refer the reader to \cite{ross2011fundamentals} for some 
+The first component of Stein's method transforms the problem of bounding \Cref{IPM} to the problem of bounding \Cref{stein_discrepancy}. The second component of Stein's method corresponds to a set of techniques to bound \Cref{stein_discrepancy}. Depending on the measurable space chosen, the form of the Stein operator and the techniques needed to bound SD differ. The discussion of such techniques is not necessary for an understanding of the rest of the paper, hence, we refer the reader to \cite{ross2011fundamentals} for some examples. 
 
+Given the definitions above, there are three remarks necessary for clarification:
 
+\emph{Remark 1:} There are several ways of formulating Stein's method, for instance using an exchangeable pair of random variables \cite{stein1986approximate}. However, here we choose the formulation based on Stein discrepancy and the Stein operator because it relates directly to the topic of this paper.
 
+\emph{Remark 2:} In \Cref{IPM} we defined the discrepancy metric in general terms, without specifying the measurable space nor the probability measures. Depending on the measurable space, different discrepancies can be constructed (e.g. Kolmogorov, Wasserstein, total variation \cite{ross2011fundamentals}), explaining the broad spectrum of applications of Stein's method. While Stein's method can be used under the class of discrepancies defined in \Cref{IPM}, known in the literature as integral probability metrics (IPM), attempts have been made to relate IPMs to other classes of divergences commonly used in the statistics literature, which would enable further uses of Stein's method. Such attempts did not, however, prove successful as an equivalence between metrics is difficult to find unless under very strong assumptions are. An example relating the class of $\phi$-divergences (e.g. the Kullback-Liebler (KL) divergence) to IPMs can be found in \cite{sriperumbudur2009integral}.
 
+\emph{Remark 3:} If the probability measure $\bbP$ has a $\calC^1$ density $p$, with respect to the Lebesgue measure, then we can consider the Stein operator of the form 
+\begin{equation}\label{score_function}
+\calT_{p}[g] = \langle \nabla \log p, g \rangle + \nabla g
+\end{equation}
+where $\calC^1$ denotes the space of 1-time continuously differentiable functions, $\langle \cdot, \cdot \rangle$ denotes the inner product operation and $\nabla$ denotes the differential operator. The Stein operator in \Cref{score_function} does not depend on the normalising constant of $p$. In the rest of the paper we will focus on the measurable space $(\bbR^d, \calB(\bbR^d))$, hence we will use the Stein operator of \Cref{score_function}.
+\\
 
+\noindent In addition to Stein's method, we provide background on reproducing kernel Hilbert spaces (RKHS) as the concepts introduced here will be at the basis of SVGD. We start by defining a Hilbert space and then move on by describing the RKHS.
+
+\subsection{Hilbert spaces}
+This definition is taken from \cite{hunter2001applied}. Here, for simplicity, we define the notion of Hilbert space for a real space, note however that a Hilbert space can also be defined on complex spaces. Let $\Gamma(\calY)$ be a linear functional space as defined in \Cref{stein_def}. The function 
+\begin{equation*}
+\langle \cdot, \cdot \rangle: \Gamma(\calY) \times \Gamma(\calY) \rightarrow \bbR
+\end{equation*}
+is an inner product if the following properties hold:
+\begin{enumerate}
+	\item $\langle f, f \rangle = 0$ if and only if $f=0$ (positive definite)
+	\item $\langle f, f \rangle \geq 0$ (nonnegative)
+	\item $\langle f, g \rangle = \langle  g, f \rangle$ (symmetric)
+	\item $\langle f, \alpha_1 g_1 + \alpha_2 g_2 \rangle = \alpha_1 \langle f, g_1 \rangle + \alpha_2 \langle f, g_2 \rangle$ (linearity in the second argument)
+\end{enumerate}
+for all $f,g_1,g_2 \in \Gamma(\calY)$ and $\alpha_1, \alpha_2 \in \bbR$. Note that while an inner product in the real space is bilinear, i.e. the linearity can be in either the first or second argument, for a complex space this is not the case. Every inner product gives rise to a norm $\parallel \cdot \parallel$ as follows:
+
+\begin{equation*}
+\parallel f \parallel = \sqrt{\langle f, f \rangle}
+\end{equation*}
+
+A linear space with an inner product is called inner product space and any inner product space is also a normed linear space. A Hilbert space is a complete\footnote{Completeness means that every Cauchy sequence of elements of the space converges to an element in the space.} inner product space and is denoted as  $\calH = (\Gamma(\calY), \langle \cdot, \cdot \rangle)$ with $\Gamma(\calY)$ complete under $\langle \cdot, \cdot \rangle$.
+
+\subsection{Reproducing kernel Hilbert Spaces}
+Having defined a Hilbert space, we can now define a RKHS (in this we use the definition of \cite{rasmussen2006gaussian}). Let $\calH$ be a Hilbert space of real functions $f \in \Gamma(\calY)$. Then $\calH$ is a reproducing kernel Hilbert space endowed with an inner product $\langle \cdot, \cdot \rangle_{\calH}$ (and norm $\parallel f \parallel_{\calH}= \sqrt{\langle f, f \rangle_{\calH}}$) if there exists a measurable function $k: E \times E \rightarrow \bbR$ with the following properties:
+\begin{enumerate}
+	\item for every fixed $x \in E$, $k(x, x')$ as a function of $x' \in E$ belongs to $\calH$
+	\item $k$ has the reproducing property $\langle f(\cdot), k(\cdot, x)\rangle_{\calH} = f(x)$
+\end{enumerate}
 % ...

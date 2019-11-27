@@ -20,8 +20,6 @@
 \refsection{0}
   \datalist[entry]{none/global//global/global}
     \entry{stein1972bound}{inproceedings}{}
-      \true{moreauthor}
-      \true{morelabelname}
       \name{author}{1}{}{%
         {{hash=6a2cfb50317c65fe2e57051d99c0380c}{%
            family={Stein},
@@ -32,13 +30,14 @@
       \list{organization}{1}{%
         {The Regents of the University of California}%
       }
-      \strng{namehash}{e843ccbb7bec0f354b38bb15f1026bb2}
-      \strng{fullhash}{e843ccbb7bec0f354b38bb15f1026bb2}
-      \strng{bibnamehash}{e843ccbb7bec0f354b38bb15f1026bb2}
-      \strng{authorbibnamehash}{e843ccbb7bec0f354b38bb15f1026bb2}
-      \strng{authornamehash}{e843ccbb7bec0f354b38bb15f1026bb2}
-      \strng{authorfullhash}{e843ccbb7bec0f354b38bb15f1026bb2}
-      \field{labelalpha}{Ste+72}
+      \strng{namehash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \strng{fullhash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \strng{bibnamehash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \strng{authorbibnamehash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \strng{authornamehash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \strng{authorfullhash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \field{extraname}{1}
+      \field{labelalpha}{Ste72}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
@@ -758,6 +757,133 @@
       \field{journaltitle}{arXiv preprint arXiv:1906.08283}
       \field{title}{Minimum Stein Discrepancy Estimators}
       \field{year}{2019}
+    \endentry
+    \entry{stein1986approximate}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=6a2cfb50317c65fe2e57051d99c0380c}{%
+           family={Stein},
+           familyi={S\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IMS}%
+      }
+      \strng{namehash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \strng{fullhash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \strng{bibnamehash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \strng{authorbibnamehash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \strng{authornamehash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \strng{authorfullhash}{6a2cfb50317c65fe2e57051d99c0380c}
+      \field{extraname}{2}
+      \field{labelalpha}{Ste86}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Approximate computation of expectations}
+      \field{year}{1986}
+    \endentry
+    \entry{sriperumbudur2009integral}{article}{}
+      \name{author}{5}{}{%
+        {{hash=6c9aa083edd83b22c3bb4039bc85d422}{%
+           family={Sriperumbudur},
+           familyi={S\bibinitperiod},
+           given={Bharath\bibnamedelima K},
+           giveni={B\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=e9c11e7f6e771dbb75fdfa98f94e91a0}{%
+           family={Fukumizu},
+           familyi={F\bibinitperiod},
+           given={Kenji},
+           giveni={K\bibinitperiod}}}%
+        {{hash=1f42dc1a2d390bd84511cbccb6397013}{%
+           family={Gretton},
+           familyi={G\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ca31cc11ec9370460148c3a9c48fce45}{%
+           family={Sch{ö}lkopf},
+           familyi={S\bibinitperiod},
+           given={Bernhard},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1137fba9f9e76a067866e6662eaeba9f}{%
+           family={Lanckriet},
+           familyi={L\bibinitperiod},
+           given={Gert\bibnamedelima RG},
+           giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc30557215690bfef3f017f7b064d35b}
+      \strng{fullhash}{4b8cac0baa1b1d16e4b85dab2277b9da}
+      \strng{bibnamehash}{dc30557215690bfef3f017f7b064d35b}
+      \strng{authorbibnamehash}{dc30557215690bfef3f017f7b064d35b}
+      \strng{authornamehash}{dc30557215690bfef3f017f7b064d35b}
+      \strng{authorfullhash}{4b8cac0baa1b1d16e4b85dab2277b9da}
+      \field{labelalpha}{Sri+09}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:0901.2698}
+      \field{title}{On integral probability metrics,$\backslash$phi-divergences and binary classification}
+      \field{year}{2009}
+    \endentry
+    \entry{hunter2001applied}{book}{}
+      \name{author}{2}{}{%
+        {{hash=ad3a113893bd72cc4c755fca9e9487e5}{%
+           family={Hunter},
+           familyi={H\bibinitperiod},
+           given={John\bibnamedelima K},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=2e2ed12e1cfad9192a0dac549ffbbf3f}{%
+           family={Nachtergaele},
+           familyi={N\bibinitperiod},
+           given={Bruno},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific Publishing Company}%
+      }
+      \strng{namehash}{6652f24adaf03a6c6c211a128978ee9b}
+      \strng{fullhash}{6652f24adaf03a6c6c211a128978ee9b}
+      \strng{bibnamehash}{6652f24adaf03a6c6c211a128978ee9b}
+      \strng{authorbibnamehash}{6652f24adaf03a6c6c211a128978ee9b}
+      \strng{authornamehash}{6652f24adaf03a6c6c211a128978ee9b}
+      \strng{authorfullhash}{6652f24adaf03a6c6c211a128978ee9b}
+      \field{labelalpha}{HN01}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Applied analysis}
+      \field{year}{2001}
+    \endentry
+    \entry{rasmussen2006gaussian}{article}{}
+      \name{author}{2}{}{%
+        {{hash=58d90ed7b7348c7a5a9b4a2a8f46df7b}{%
+           family={Rasmussen},
+           familyi={R\bibinitperiod},
+           given={Carl\bibnamedelima Edward},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=d34fdfcbfcb5412397b946351370db22}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Christopher\bibnamedelima KI},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0ccf4a09a3a6a91719405724e3ae5da}
+      \strng{fullhash}{f0ccf4a09a3a6a91719405724e3ae5da}
+      \strng{bibnamehash}{f0ccf4a09a3a6a91719405724e3ae5da}
+      \strng{authorbibnamehash}{f0ccf4a09a3a6a91719405724e3ae5da}
+      \strng{authornamehash}{f0ccf4a09a3a6a91719405724e3ae5da}
+      \strng{authorfullhash}{f0ccf4a09a3a6a91719405724e3ae5da}
+      \field{labelalpha}{RW06}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Gaussian Processes for Machine Learning, by CE Rasmussen and CKI Williams. ISBN-13 978-0-262-18253-9}
+      \field{title}{Gaussian Processes for Machine Learning}
+      \field{year}{2006}
     \endentry
   \enddatalist
 \endrefsection
