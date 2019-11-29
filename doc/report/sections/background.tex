@@ -21,7 +21,7 @@ a measurable function that quantifies the discrepancy between two probability me
 \begin{equation}\label{stein_discrepancy}
 SD_{\calS_{\bbP}[\calG]}(\bbP,\bbQ) = \sup_{f \in \calS_{\bbP}[\calG]} \left|\int_E f(x)d\bbP - \int_E f(x)d\bbQ \right| = \sup_{g \in \calG}\left|\int_E \calS_{\bbP}[g]d\bbQ \right|, \ x \in E
 \end{equation}
-
+To simplify notation in the rest of the paper, we write $\int_E f(x)d\bbP = E_{\bbP}[f(x)]$ where $E[\cdot]$ is the expectation operator and the subscript is used to specify the measure with respect to which we compute the expectation. 
 The first component of Stein's method transforms the problem of bounding \Cref{IPM} to the problem of bounding \Cref{stein_discrepancy}. The second component of Stein's method corresponds to a set of techniques to bound \Cref{stein_discrepancy}. Depending on the measurable space chosen, the form of the Stein operator and the techniques needed to bound SD differ. The discussion of such techniques is not necessary for an understanding of the rest of the paper, hence, we refer the reader to \cite{ross2011fundamentals} for some examples. 
 
 Given the definitions above, there are three remarks necessary for clarification:
@@ -57,12 +57,14 @@ for all $f,g_1,g_2 \in \Gamma(\calY)$ and $\alpha_1, \alpha_2 \in \bbR$. Note th
 \parallel f \parallel = \sqrt{\langle f, f \rangle}
 \end{equation*}
 
-A linear space with an inner product is called inner product space and any inner product space is also a normed linear space. A Hilbert space is a complete\footnote{Completeness means that every Cauchy sequence of elements of the space converges to an element in the space.} inner product space and is denoted as  $\calH = (\Gamma(\calY), \langle \cdot, \cdot \rangle)$ with $\Gamma(\calY)$ complete under $\langle \cdot, \cdot \rangle$.
+A linear space with an inner product is called inner product space and any inner product space is also a normed linear space. A Hilbert space is a complete\footnote{Completeness means that every Cauchy sequence of elements of the space converges to an element in the space.} inner product space and is denoted as  $\calH = (\Gamma(\calY), \langle \cdot, \cdot \rangle)$ with $\Gamma(\calY)$ complete under $\langle \cdot, \cdot \rangle$. In the following we use $\langle \cdot, \cdot \rangle_{\calH}$ and $\parallel \cdot \parallel_{\calH}$ to denote the inner product and norm on Hilbert space $\calH$, respectively. The definition of Hilbert space above is general and holds for functions on any space. In this paper we deal with real functions, therefore, we will use $\Gamma(\calY) = \Gamma(\bbR)$.
+
+Throughout the paper, we denote by $\calH^d = \calH \times \ldots \times \calH$ the space of $d \times 1$ vector functions $\boldsymbol{f} = \{f_i: f_i \in \calH\}_{i \in \{1, \ldots, d\}}$ with an inner product $\langle \boldsymbol{f}, \boldsymbol{g} \rangle_{\calH^d} = \sum_{i =1}^d \langle f_i, g_i \rangle_{\calH}$ for $\boldsymbol{f}$ and $\boldsymbol{g} = \{g_i\}_{i  \in \{1, \ldots, d\}}$, and norm $\parallel \boldsymbol{f} \parallel_{\calH^d} = \sqrt{\sum_{i=1}^d \parallel f_i \parallel_{\calH}^2}$ as in \cite{liu2016kernelized}.
 
 \subsection{Reproducing kernel Hilbert Spaces}
-Having defined a Hilbert space, we can now define a RKHS (in this we use the definition of \cite{rasmussen2006gaussian}). Let $\calH$ be a Hilbert space of real functions $f \in \Gamma(\calY)$. Then $\calH$ is a reproducing kernel Hilbert space endowed with an inner product $\langle \cdot, \cdot \rangle_{\calH}$ (and norm $\parallel f \parallel_{\calH}= \sqrt{\langle f, f \rangle_{\calH}}$) if there exists a measurable function $k: E \times E \rightarrow \bbR$ with the following properties:
+Having defined a Hilbert space, we can now define a RKHS (in this we use the definition of \cite{rasmussen2006gaussian}). Let $\calH$ be a Hilbert space of real functions $f \in \Gamma(\bbR)$. Then $\calH$ is a reproducing kernel Hilbert space endowed with an inner product $\langle \cdot, \cdot \rangle_{\calH}$ (and norm $\parallel f \parallel_{\calH}= \sqrt{\langle f, f \rangle_{\calH}}$) if there exists a measurable function $k: E \times E \rightarrow \bbR$ with the following properties:
 \begin{enumerate}
 	\item for every fixed $x \in E$, $k(x, x')$ as a function of $x' \in E$ belongs to $\calH$
-	\item $k$ has the reproducing property $\langle f(\cdot), k(\cdot, x)\rangle_{\calH} = f(x)$
+	\item $k$ has the reproducing property $\langle f(\cdot), k(\cdot, x)\rangle_{\calH} = f(x)$ and $\langle k(x, \cdot), k(x', \cdot) \rangle_{\calH} = k(x, x')$
 \end{enumerate}
 % ...

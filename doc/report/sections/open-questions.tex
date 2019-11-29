@@ -3,3 +3,35 @@
 % open questions section
 
 \section{Open questions and research directions}\label{rest}
+This section discusses the details of SVGD \cite{liu2016stein} and future directions for research applying Stein's method to machine learning. We start by presenting the kernelized Stein discrepancy (KSD) and deriving an essential result for SVGD. We continue introducing variational inference and deriving the main result of the paper. Next, we briefly describe optimal transport and show its importance for SVGD. We conclude with a discussion of methodological improvements and topics for further research.
+
+\noindent In the remaining of the paper we will use the measurable space $(E, \calE) = (\bbR^d, \calB(\bbR^d))$. 
+
+\subsection{Kernelized Stein discrepancy}
+Given two measures $\bbP, \bbQ$ absolutely continuous with respect to the Lebesgue measure, the Stein discrepancy as defined in \Cref{stein_discrepancy} can be rewritten in the form
+
+\begin{equation}\label{stein_discrepancy_2}
+SD_{\calT_p[\calG]}(\bbP, \bbQ) = \max_{g \in \calG}\left\{E_{\bbQ}\left[\calT_{p}[g](x)\right]^2\right \}, \ x \in \bbR^d
+\end{equation}
+
+Computation of the discrepancy in \Cref{stein_discrepancy_2} is not tractable, therefore, its use in machine learning has been limited. \cite{gorham2015measuring} derived a computationally tractable version of the discrepancy under some constraints that transformed the optimisation into a linear programming problem. A method to compute Stein discrepancy in a closed form appeared for the first time in \cite{liu2016kernelized}. The authors derived kernelized Stein discrepancy using vector-valued functions $\boldsymbol{g}$ in the RKHS $\calH^d$. For a vector-valued function, $\boldsymbol{g}$, \Cref{stein_discrepancy_2} is defined as
+
+\begin{equation}\label{stein_discrepancy_vector}
+SD_{\calT_p[\calG]}(\bbP, \bbQ) = \max_{\boldsymbol{g} \in \calG}\left\{E_{\bbQ}\left[\text{trace}(\calT_{p}[\boldsymbol{g}](x))\right]^2\right \}, \ x \in \bbR^d
+\end{equation}
+
+where the trace is necessary to obtain a scalar value for $E_{\bbQ}\left[\calT_{p}[\boldsymbol{g}](x)\right]$ which would otherwise be a $d \times d$ matrix. Furthermore, for RKHS $\calH$ with positive definite kernel $k(x, x')$ in $\calT_{p}[\calG]$, the Stein class $\calG$ of $p$ (see Definition 3.4 in \cite{liu2016kernelized} for the conditions), if we restrict $\boldsymbol{g}$ to the unit ball of $\calH^d$, i.e. $\parallel \boldsymbol{g} \parallel_{\calH^d} \leq 1$, the discrepancy in \Cref{stein_discrepancy_vector} becomes
+
+\begin{equation}\label{stein_discrepancy_rkhs}
+SD_{\calT_p[\calH^d]}(\bbP, \bbQ) = \max_{\boldsymbol{g} \in \calH^d}\left\{E_{\bbQ}\left[\text{trace}(\calT_{p}[\boldsymbol{g}](x))\right]^2, \ s.t. \parallel \boldsymbol{g}\parallel_{\calH^d} \leq 1\right \},\ x \in \bbR^d
+\end{equation}
+
+and has a closed form solution given by $\boldsymbol{g}^* = \boldsymbol{\beta}/\parallel \boldsymbol{\beta} \parallel_{\calH^d}$ where $\boldsymbol{\beta} = E_{\bbQ}\left[\calT_p[k(x, \cdot)]\right]$. To prove this result we need to derive some intermediate results, these can be found in the appendix of \cite{liu2016kernelized}, here we limit to summarising such results. Firstly, for a d-dimensional vector-valued function $\boldsymbol{g} \in \calT_p[\calG]$ it holds by definition that
+\begin{equation*}
+E_{\bbP}[\calT_p[\boldsymbol{g}](x)] = \boldsymbol{0}_{d \times d}, \ x \in \bbR^d
+\end{equation*}
+where $\boldsymbol{0}_{d \times d}$ indicates the $d \times d$ zero matrix. Under this assumption we can show that for $\boldsymbol{g} \in \calT_p[\calG]$ the following holds
+\begin{equation*}
+E_{\bbQ}[\calT_p[\boldsymbol{g}]] = E_{\bbQ}[\calT_p[\boldsymbol{g}] - \calT_q[\boldsymbol{g}]] = E_{\bbQ}[\langle \nabla \log p, \boldsymbol{g} \rangle_{\calH^d} + \nabla \boldsymbol{g} - \langle \nabla \log q, \boldsymbol{g} \rangle_{\calH^d} - \nabla \boldsymbol{g}] =  E_{\bbQ}[\langle \nabla\log p - \nabla \log q, \boldsymbol{g} \rangle_{\calH^d}]
+\end{equation*}
+where $\calT_p[\boldsymbol{g}] = \langle \nabla \log p, \boldsymbol{g} \rangle_{\calH^d} + \nabla \boldsymbol{g}$ as in \Cref{score_function} but with vector-valued functions and $q$ is the density of $\bbQ$ with respect to the Lebesgue measure.
