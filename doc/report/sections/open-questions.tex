@@ -3,35 +3,141 @@
 % open questions section
 
 \section{Open questions and research directions}\label{rest}
-This section discusses the details of SVGD \cite{liu2016stein} and future directions for research applying Stein's method to machine learning. We start by presenting the kernelized Stein discrepancy (KSD) and deriving an essential result for SVGD. We continue introducing variational inference and deriving the main result of the paper. Next, we briefly describe optimal transport and show its importance for SVGD. We conclude with a discussion of methodological improvements and topics for further research.
+This section discusses the details of SVGD \cite{liu2016stein} and future directions for research applying Stein's method to machine learning. We start by presenting the kernelized Stein discrepancy (KSD) and deriving an essential result for SVGD. We continue introducing optimal transport and variational inference. Next, derive the main result of the paper and show how its importance for SVGD. We conclude with a discussion of methodological improvements and topics for further research.
 
 \noindent In the remaining of the paper we will use the measurable space $(E, \calE) = (\bbR^d, \calB(\bbR^d))$. 
 
-\subsection{Kernelized Stein discrepancy}
+\subsection{Kernelized Stein discrepancy}\label{KSD}
 Given two measures $\bbP, \bbQ$ absolutely continuous with respect to the Lebesgue measure, the Stein discrepancy as defined in \Cref{stein_discrepancy} can be rewritten in the form
 
 \begin{equation}\label{stein_discrepancy_2}
 SD_{\calT_p[\calG]}(\bbP, \bbQ) = \max_{g \in \calG}\left\{E_{\bbQ}\left[\calT_{p}[g](x)\right]^2\right \}, \ x \in \bbR^d
 \end{equation}
 
-Computation of the discrepancy in \Cref{stein_discrepancy_2} is not tractable, therefore, its use in machine learning has been limited. \cite{gorham2015measuring} derived a computationally tractable version of the discrepancy under some constraints that transformed the optimisation into a linear programming problem. A method to compute Stein discrepancy in a closed form appeared for the first time in \cite{liu2016kernelized}. The authors derived kernelized Stein discrepancy using vector-valued functions $\boldsymbol{g}$ in the RKHS $\calH^d$. For a vector-valued function, $\boldsymbol{g}$, \Cref{stein_discrepancy_2} is defined as
+Computation of the discrepancy in \Cref{stein_discrepancy_2} is not tractable, therefore, its use in machine learning has been limited. \cite{gorham2015measuring} derived a computationally tractable version of the discrepancy under some constraints that transformed the optimisation into a linear programming problem. A method to compute Stein discrepancy in a closed form appeared for the first time in \cite{liu2016kernelized}. The authors derived kernelized Stein discrepancy using vector-valued functions $\boldsymbol{g}$ in the RKHS $\calH^d$. For a vector-valued function, we assume $\boldsymbol{g}$ is a column vector, the Stein operator can be written as
 
+\begin{equation*}
+S_{\bbP}[\boldsymbol{g}] = (\nabla\log p) \boldsymbol{g}^T + \nabla\boldsymbol{g}
+\end{equation*}
+which results in a $d \times d$ matrix. However, in order to obtain a scalar value from the expectation in the Stein discrepancy, the trace of $S_{\bbP}[\boldsymbol{g}]$ is used in practice. Computing the elements on the diagonal of $S_{\bbP}[\boldsymbol{g}]$, it can be shown that 
+\begin{equation*}
+\text{trace}(S_{\bbP}[\boldsymbol{g}]) = \calT_p[\boldsymbol{g}]
+\end{equation*}
+with $\calT_p[\boldsymbol{g}]$ as in \Cref{score_function}. Therefore the Stein discrepancy can simply be rewritten in the following way
 \begin{equation}\label{stein_discrepancy_vector}
-SD_{\calT_p[\calG]}(\bbP, \bbQ) = \max_{\boldsymbol{g} \in \calG}\left\{E_{\bbQ}\left[\text{trace}(\calT_{p}[\boldsymbol{g}](x))\right]^2\right \}, \ x \in \bbR^d
+SD_{\calT_p[\calG]}(\bbP, \bbQ) = \max_{\boldsymbol{g} \in \calG}\left\{E_{\bbQ}\left[\calT_{p}[\boldsymbol{g}](x)\right]^2\right \}, \ x \in \bbR^d
 \end{equation}
 
-where the trace is necessary to obtain a scalar value for $E_{\bbQ}\left[\calT_{p}[\boldsymbol{g}](x)\right]$ which would otherwise be a $d \times d$ matrix. Furthermore, for RKHS $\calH$ with positive definite kernel $k(x, x')$ in $\calT_{p}[\calG]$, the Stein class $\calG$ of $p$ (see Definition 3.4 in \cite{liu2016kernelized} for the conditions), if we restrict $\boldsymbol{g}$ to the unit ball of $\calH^d$, i.e. $\parallel \boldsymbol{g} \parallel_{\calH^d} \leq 1$, the discrepancy in \Cref{stein_discrepancy_vector} becomes
+Furthermore, for RKHS $\calH$ with positive definite kernel $k(x, x')$ in $\calT_{p}[\calG]$, the Stein class $\calG$ of $p$ (see Definition 3.4 in \cite{liu2016kernelized} for the conditions), if we restrict $\boldsymbol{g}$ to the unit ball of $\calH^d$, i.e. $\parallel \boldsymbol{g} \parallel_{\calH^d} \leq 1$, the discrepancy in \Cref{stein_discrepancy_vector} becomes
 
 \begin{equation}\label{stein_discrepancy_rkhs}
-SD_{\calT_p[\calH^d]}(\bbP, \bbQ) = \max_{\boldsymbol{g} \in \calH^d}\left\{E_{\bbQ}\left[\text{trace}(\calT_{p}[\boldsymbol{g}](x))\right]^2, \ s.t. \parallel \boldsymbol{g}\parallel_{\calH^d} \leq 1\right \},\ x \in \bbR^d
+SD_{\calT_p[\calH^d]}(\bbP, \bbQ) = \max_{\boldsymbol{g} \in \calH^d}\left\{E_{\bbQ}\left[\calT_{p}[\boldsymbol{g}](x)\right]^2, \ s.t. \parallel \boldsymbol{g}\parallel_{\calH^d} \leq 1\right \},\ x \in \bbR^d
 \end{equation}
 
-and has a closed form solution given by $\boldsymbol{g}^* = \boldsymbol{\beta}/\parallel \boldsymbol{\beta} \parallel_{\calH^d}$ where $\boldsymbol{\beta} = E_{\bbQ}\left[\calT_p[k(x, \cdot)]\right]$. To prove this result we need to derive some intermediate results, these can be found in the appendix of \cite{liu2016kernelized}, here we limit to summarising such results. Firstly, for a d-dimensional vector-valued function $\boldsymbol{g} \in \calT_p[\calG]$ it holds by definition that
+and has a closed form solution given by $\boldsymbol{g}^* = \boldsymbol{\beta}/\parallel \boldsymbol{\beta} \parallel_{\calH^d}$ where $\boldsymbol{\beta} = E_{\bbQ}\left[\calT_p[k(x, \cdot)]\right]$. To prove this result we can use Definition 3.2 of \cite{liu2016kernelized} together with the reproducing property for $k(x, x')$ (condition 2 for an RKHS)
+
 \begin{equation*}
-E_{\bbP}[\calT_p[\boldsymbol{g}](x)] = \boldsymbol{0}_{d \times d}, \ x \in \bbR^d
+	\begin{split}
+E_{\bbQ}[\calT_p[\boldsymbol{g}]]^2 &= E_{\bbQ}[(\nabla \log p - \nabla \log q)^T k(x, x') (\nabla \log p - \nabla \log q)] \\
+&=  E_{\bbQ}[(\nabla \log p - \nabla \log q)^T \langle k(x, \cdot), k(x', \cdot) \rangle_{\calH} (\nabla \log p - \nabla \log q)] \\
+&= \sum_{i=1}^d \langle E_{\bbQ}[(\nabla_i \log p - \nabla_i \log q) k(x, \cdot)], E_{\bbQ}[ k(x', \cdot) (\nabla_i \log p - \nabla_i \log q)]  \rangle_{\calH} \\
+&= \sum_{i=1}^d \langle \boldsymbol{\beta}_i, \boldsymbol{\beta}_i \rangle_{\calH} = \parallel \boldsymbol{\beta}\parallel^2_{\calH^d}, \ x,x' \in \bbR^d
+	\end{split}
 \end{equation*}
-where $\boldsymbol{0}_{d \times d}$ indicates the $d \times d$ zero matrix. Under this assumption we can show that for $\boldsymbol{g} \in \calT_p[\calG]$ the following holds
+from which $\boldsymbol{g}^*$ follows. We used $q$, the density of $\bbQ$ with respect to the Lebesgue measure, $\nabla_i$, the derivative with respect to the $i$-th variable and $E_{\bbQ}\left[\calT_p[k(x, \cdot)]\right] = E_{\bbQ}\left[(\nabla \log p - \nabla \log q)k(x, \cdot)\right] $ which can be derived using the fact that $k(x, x')$ is in the Stein class $\calG$ of $p$. Using samples from $q$ the optimal solution to $\boldsymbol{g}^*$ can be computed approximately using \Cref{score_function}. 
+
+\subsection{Optimal transport}\label{OT}
+Before introducing how the results in the previous section can be used to design SVGD, we need to briefly introduce optimal transport as this will be essential in the next section.
+
+Optimal transport deals with the problem of transporting mass from one distribution to another at the minimum cost possible and preserving total mass. Eventually, optimal transport tries to map points in the support of one distribution to the other. In probability terms, given two measures $\mu$, $\nu$ on measurable spaces $(E, \calE)$ and $(D, \calD)$, respectively, optimal transport aims at finding a measurable function $T: E \rightarrow D$ such that a distance metric, $d_{OT}$, is minimised while total mass is preserved. The distance metric $d_{OT}$ can be chosen depending on the measurable spaces considered. If we assume that $\mu \ll \nu$, $\nu \ll \mu$ and $T$ is a diffeomorphism then, optimal transport can be simply seen as the change of variables given by the Radon-Nikodym theorem \cite{peyre2019computational}. Hence we have
+\begin{equation}\label{OT_density}
+\int_A gd\nu = \int_{T^{-1}(A)} (g \circ T) \frac{d\nu}{d\mu}d\mu, \ A \subset D
+\end{equation}
+
+ 
+\subsection{Variational inference}
+Having defined the kernelized Stein discrepancy and the core idea of optimal transport we can now analyse how the two concepts are used to design SVGD and perform variational inference. First we introduce variational inference and then we move on to a detailed description of SVGD. In the following discussion we assume that all measures are absolutely continuous with respect to the Lebesgue measure and indicate with a lower case letter the density of the corresponding measure e.g. $p$ is the density of $\bbP$.
+
+The aim of variational inference is to approximate a difficult distribution $p$, usually the posterior distribution of a Bayesian model, with an easier distribution $q$, from which we can easily obtain samples. Such approximation is carried out selecting a family of probability measures $\calQ = \{\bbQ_{\theta}: \theta \in \Theta\}$ with $\bbQ_{\theta} \ll \bbP$ for all $\bbQ_{\theta} \in \calQ$ and finding the optimal $q_{\theta}$ such that a divergence between $p$ and $q_{\theta}$ is minimised. The KL divergence is usually chosen for this purpose, meaning that the problem of variational inference can be summarised as
+
+\begin{equation}\label{KL}
+q_{\theta}^* = \arg\min_{q_{\theta} \in \calQ}\{KL(q_{\theta}\parallel p)\} = \arg \min_{q_{\theta} \in \calQ} \left\{\int_{\bbR^d} \log \frac{q_{\theta}}{p}d\bbQ_{\theta} 	\right\} = \arg \min_{q_{\theta} \in \calQ} \left\{E_{\bbQ_{\theta}}\left[\log \frac{q_{\theta}(x)}{p(x)}\right]	\right\}, \ x \in \bbR^d
+\end{equation}
+
+The choice of distribution families $\calQ$ needs to strike a balance between accuracy of the approximation and tractability. Choosing a family of distributions that is too simple might not be able to capture complex characteristics of the distribution that we are trying to approximate despite making the minimisation problem easy. On the other hand, a too complex distribution family could provide a very accurate approximation, at the cost of increasing the computational cost of the minimisation. Therefore, choosing $\calQ$ requires thought. Next, we show how \cite{liu2016stein} found a way to achieve the balance between computation and complexity by choosing $\calQ$ such that the KL divergence can be related to Stein's method.
+
+Examining the definition of the KL divergence, it is not clear how Stein's method can be related to variational inference. In fact, the KL divergence does not fall into the family of divergences that can be directly used to apply Stein's method (compare the KL divergence to \Cref{IPM}). The work of \cite{sriperumbudur2009integral} tried to relate IPMs to family of divergences of which the KL is a special case, however, theoretical results showed that the KL divergence cannot be directly related to IPMs therefore not allowing for a straightforward application of Stein's method to variational inference. Despite such theoretical results, \cite{liu2016stein} showed that by applying the basic idea of optimal transport from \Cref{OT}, together with a restriction to functions in the RKHS, the KL divergence can be related to KSD. In particular, the relation derived by \cite{liu2016stein} connects the gradient of the KL divergence to KSD. Although this is not a direct relation such as the one \cite{sriperumbudur2009integral} tried to find, the connection between the gradient of the KL and KSD is sufficient to perform variational inference. In practice, the technique used to minimize \Cref{KL} is stochastic gradient descent, which only requires computation of the gradient of the KL divergence. 
+
+\subsection{Stein Variational Gradient Descent}
+SVGD follows from the main result of \cite{liu2016stein} which we derive here. Let $T: \bbR^d \rightarrow \bbR^d$ define a smooth diffeomorphism that maps a random variable $X$ with tractable distribution $q_{\theta}^0$ to a random variable $Z = T(X)$ with distribution $q_{\theta}^{[T]}$, then using \Cref{OT_density} the distribution of Z can be written as 
+\begin{equation}\label{q_z}
+q_{\theta}^{[T]}(z) = q_{\theta}^0(T^{-1}(z))|\det(\nabla_z T^{-1}(z))|
+\end{equation}
+with $T^{-1}$ the inverse map of $T$ and $\nabla T^{-1}$ the Jacobian of $T^{-1}$. Note that expectations with respect to $q_{\theta}^{[T]}$ can be easily evaluated averaging over $\{z_i\}_{i=1}^N$ with $z_i = T(x_i)$ and $x_i \sim q_{\theta}^0$. However, in this setting, a tractable and accurate parametric family $\calQ$ needs to be specified and the transform $T$ needs to have an efficiently computable Jacobian. SVGD, however, does not require a parametric family specification nor the Jacobian computation. Defining $T$ as a small perturbation of the identity map, i.e. $T(x) = x + \epsilon g(x)$ with $g$ a smooth function in the RKHS $\calH$ indicating the perturbation direction and $\epsilon$ determining its magnitude, it is possible to relate the KL divergence to Stein discrepancy.
+
+Given the transformation $T(x) = x + \epsilon g(x)$, it can be shown that 
+\begin{equation}\label{grad_kl}
+\left. \nabla_{\epsilon}KL\left(q_{\theta}^{[T]} \parallel p\right) \right\vert_{\epsilon = 0} =  - E_{\bbQ_{\theta}}\left[\calT_p[g](x)\right]
+\end{equation}
+\noindent \emph{Proof (Theorem 3.1 \cite{liu2016stein})}: We first introduce a Lemma that is needed in the proof:
+\begin{equation}\label{lemma_1}
+\nabla_{\epsilon}KL\left(q_{\theta}^{[T]} \parallel p \right) = E_{\bbQ_{\theta}}\left[(\langle \nabla\log p, \nabla_{\epsilon}T \rangle + \text{trace}\left((\nabla_x T)^{-1} \nabla_{\epsilon}\nabla_x T\right)) (x)\right], \ x \in \bbR^d
+\end{equation}
+next, in the same way as for \Cref{q_z}, we define 
+\begin{equation}\label{p_z}
+p^{[T]}(z) = p(T^{-1}(z))|\det \nabla_z T^{-1}(z)|
+\end{equation}
+and from the definitions in \Cref{q_z} and \Cref{p_z} and using the change of variables $x = T^{-1}(z)$ we can show that
 \begin{equation*}
-E_{\bbQ}[\calT_p[\boldsymbol{g}]] = E_{\bbQ}[\calT_p[\boldsymbol{g}] - \calT_q[\boldsymbol{g}]] = E_{\bbQ}[\langle \nabla \log p, \boldsymbol{g} \rangle_{\calH^d} + \nabla \boldsymbol{g} - \langle \nabla \log q, \boldsymbol{g} \rangle_{\calH^d} - \nabla \boldsymbol{g}] =  E_{\bbQ}[\langle \nabla\log p - \nabla \log q, \boldsymbol{g} \rangle_{\calH^d}]
+\begin{split}
+KL\left(q_{\theta}^{T} \parallel p \right) &= E_{\bbQ_{\theta}^T}\left[\log \frac{q_{\theta}^{T}(z)}{p(T^{-1}(z))}\right] = E_{\bbQ_{\theta}^T}\left[\log q_{\theta}(T^{-1}(z)) - \log \frac{p^{[T]}(z)}{|\det \nabla_z T^{-1}(z)|}\right]  \\
+&= E_{\bbQ_{\theta}}\left[\log \frac{q_{\theta}(x)}{p^{[T]}(T^(x))}	\right] = KL(q_{\theta}\parallel p^{[T]})
+\end{split}
 \end{equation*}
-where $\calT_p[\boldsymbol{g}] = \langle \nabla \log p, \boldsymbol{g} \rangle_{\calH^d} + \nabla \boldsymbol{g}$ as in \Cref{score_function} but with vector-valued functions and $q$ is the density of $\bbQ$ with respect to the Lebesgue measure.
+from which it follows 
+\begin{equation*}
+\nabla_{\epsilon}KL(q_{\theta}^{T} \parallel p) = -E_{\bbQ_{\theta}}\left[\nabla_{\epsilon} \log p^{[T]}(T(x))\right]
+\end{equation*} 
+with 
+\begin{equation*}
+\nabla_{\epsilon}\log p^{[T]}(T(x)) = (\langle \nabla\log p, \nabla_{\epsilon}T \rangle + \text{trace}\left((\nabla_x T)^{-1} \nabla_{\epsilon}\nabla_x T\right)) (x)\
+\end{equation*}
+following from \Cref{lemma_1}. Therefore, assuming $T(x) = x + \epsilon g(x)$ and $\epsilon=0$ we have
+\begin{equation*}
+T(x) = x, \quad \nabla_{\epsilon}T(x) = g(x), \quad \nabla_x T(x) = I, \quad \nabla_{\epsilon}\nabla_x T(x) = \nabla_x g(x)
+\end{equation*}
+with $I$ the identity matrix. The result in \Cref{grad_kl} follows substituting the elements above into \Cref{lemma_1}. $\qed$
+
+Furthermore, if we restrict the functions $g$ to the ball $\calB = \{\boldsymbol{g} \in \calH^d:\ \parallel \boldsymbol{g}\parallel^2_{\calH^d} \leq SD_{\calT_{p[\calH^d]}}(\bbP, \bbQ_{\theta})\}$, the direction of steepest descent that maximises the negative gradient of the KL divergence is given by $\boldsymbol{\beta}_{\bbQ_{\theta}} = E_{\bbQ_{\theta}}\left[\calT_p[k(x, \cdot)]\right]$, for which $\left.\nabla_{\epsilon}KL(q_{\theta}^{T} \parallel p)\right\vert_{\epsilon = 0} = - SD_{\calT_{p[\calH^d]}}(\bbP, \bbQ_{\theta})$. The relation between the gradient of the KL divergence and Stein discrepancy can further be generalized to be seen as a step of functional gradient descent in RKHS (see \cite{liu2016stein} for more details on this), however, the results above suffice to define SVGD. 
+
+\subsubsection{SVGD Algorithm} From the knowledge that $\boldsymbol{\beta}_{\bbQ_{\theta}}$ is the direction of steepest descent that maximises the negative gradient of the KL divergence, we can develop a modification to stochastic gradient descent (SGD) to incorporate such information. In particular, we can substitute the computation of the gradient of the KL divergence in each SGD iteration with the computation of $\boldsymbol{\beta}_{\bbQ_{\theta}}$. 
+
+The iterative procedure consists of two steps. The first step applies the transform $T_l(x) = x + \epsilon_l \boldsymbol{\beta}_{\bbQ_{\theta}^l}(x)$, which minimises the gradient of the KL divergence at step $l$. The second step updates the distribution $q_{\theta}^{l+1} = q_{\theta}^{[T_{l}]}$ such that the relation between the gradient of the KL divergence and Stein discrepancy is preserved. In this procedure, $\epsilon_l$ is a step size parameter, usually updated automatically by the optimisation method used, that when sufficiently small makes the Jacobian of $T$ full rank (close to the identity matrix) \cite{liu2016stein}. In addition to this, it is necessary to notice that $\boldsymbol{\beta}_{\bbQ_{\theta}}$ requires the computation of an expectation, which can be approximated using a set of particles $\{x_i\}_{i=1}^N$. The particles used in the approximation can be sampled from $q_{\theta}^0$ in the first iteration of the algorithm and updated at each iteration, using the transform $T$, to preserve all the properties derived. Algorithm \ref{algo}, taken from \cite{liu2016stein}, summarises SVGD, in practice, the RBF kernel $k(x, x') = \exp\left(-\frac{1}{h}\parallel x - x'\parallel^2 \right)$ is used as it falls in the Stein class of smooth densities (see the solution Exercise 1 for a proof).
+
+\begin{algorithm}[H] \label{algo}
+	\SetAlgoLined
+	\KwIn{A target distribution with density function $p(x)$ and a set of initial particles $\{x_i^0\}_{i=1}^N$}
+	\KwOut{A set of particles  $\{x_i\}_{i=1}^N$ that approximates the target distribution}
+	\For{\text{iteration} $l$}{
+		\begin{equation*}
+		x_i^{l+1} \leftarrow x_i^l + \epsilon_l \hat{f}(x_i^l) \quad \text{where} \quad \hat{f}(x) = \frac{1}{N}\sum_{j=1}^N \left[k(x_j^l, x)\nabla_{x_j^l}\log p(x_j^l) + \nabla_{x_j^l}k(x_j^l, x)\right]
+		\end{equation*}
+		where $\epsilon_l$ is the step size at the $l$-th iteration.
+	}
+	\caption{Bayesian Inference via Variational Gradient Descent}
+
+\end{algorithm}
+
+In Algorithm \ref{algo} the particles $\{x_i\}_{i=1}^N$ do not depend on the initial distribution $q_{\theta}^0$, indicating that SVGD can be applied using particles generated by other procedures that could provide better starting samples. Furthermore, we expect that as $N$ increases, we obtain a better approximation of the expectation and therefore a better optimisation result, some theoretical results for SVGD have been derived in \cite{liu2017stein, liu2018stein}.
+
+\subsubsection{Computational challenges}
+Despite SVGD performed better than existing methods in experimental results (see \cite{liu2016stein}), computational issues arise in two parts of the method. Firstly, in each iteration, the gradient of $\log p(x)$ has to be computed for each particle used in the approximation. The authors propose to compute the gradient using mini-batches of the data and parallelizing the gradient computation on multiple cores. Secondly, although $\hat{f}(x)$ only requires the computation of some entries of the kernel matrix, computing the approximation for each particle in the approximation eventually requires the entire kernel matrix. The kernel matrix contains $N^2$ entries, its computation could therefore be highly expensive in situations where a large number of particles is used in the approximation. Although the results on toy examples in \cite{liu2016stein} show that 100 particles are enough to obtain a good approximation, for harder distributions more particles might be needed. To overcome this issue the authors propose to subsample particles resulting in a smaller kernel matrix. We believe that methods from the Gaussian processes literature could also be used to efficiently compute the kernel matrix.
+
+\subsection{Discussion and future work}
+In this paper we reformulated Stein variational gradient descent by \cite{liu2016stein} in more theoretical terms. After introducing Stein's method, RKHS, we derived the relation between the gradient of the KL divergence and Stein discrepancy, which allowed to formalise SVGD. Since the introduction of SVGD in 2016, the literature on Stein's method and machine learning has developed rapidly with theoretical work as well as applications. SVGD has been generalised to graphical models \cite{wang2017stein}, reinforcement learning \cite{liu2017stein2} and mixture models \cite{wang2019nonlinear}. Furthermore, improvements to the original version of SVGD presented in this paper have beed proposed, for instance, \cite{han2017stein} introduced ideas from importance sampling into SVGD and \cite{han2018stein} proposed a gradient-free version of the algorithm. More recently, \cite{wang2019stein} generalised SVGD replacing the scalar valued kernels with matrix valued kernels and were able to use second order elements, such as the Hessian, in the KL minimisation.
+
+Despite the advances in the literature using Stein's method for machine learning, there are some research directions that future work could explore. Firstly, in the derivation of Stein discrepancy in \Cref{stein_discrepancy_vector}, the literature uses the trace of the kernel matrix to ensure the expectation results in a scalar value. In \cite{liu2016kernelized}, the authors do not provide insight into why the trace is chosen over other functions such as the determinant for example. We saw that the solution to Stein discrepancy does not simplify computations in practice as the full kernel matrix needs to be computed for SVGD. Exploring other methods to enforce the expectation to be a scalar in Stein discrepancy would not cause increased computational cost but might lead to functions that provide better approximations. Redefining Stein discrepancy could lead however, to a loss in the relation between KL and Stein discrepancy.
+
+Furthermore, the paper did not investigate other one-to-one transformations that would leave the derivations invariant. The added value of investigating different transform function lies in the fact that approximations of the target distribution could converge faster. Instead of limiting the set of transforms to a single function, we propose to use neural network architectures especially designed to provide reversible transformations with a trivial Jacobian. These architectures, such as the NICE network of \cite{dinh2014nice} or normalizing flows, could be optimised during the iterations of SVGD so as to provide better transformations that preserve the SVGD properties. Although the design of these architectures would require careful study, the flexibility added to the algorithm could be substantial and impact the convergence speed. Obviously, adding neural network architectures within SVGD would likely increase the time per iteration but this might be balanced out by a faster convergence.
+
+Lastly, it would be interesting to investigate the performance of different kernels, with the important restriction to those in the Stein class.

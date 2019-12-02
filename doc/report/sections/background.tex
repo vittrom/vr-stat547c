@@ -14,10 +14,10 @@ This paper presents the work of \citet{liu2016stein} on Stein Variational Gradie
 More formally, and here we borrow some of the notation from \cite{barp2019minimum}, let $(\Omega, \calA)$ be a measurable space and denote by $\calP_{\Omega}$  the set of probability measures on $(\Omega, \calA)$. Further let $\calP_{E} \subset \calP_{\Omega}$ be the set of probability measures on the measurable space $(E, \calE)$ with $E \subset \Omega$ and $\calE \subset \calA$. Define $D: \calP_{E} \times \calP_{E} \rightarrow \bbR_+$ as
 
 \begin{equation}\label{IPM}
-D_{\calE}(\bbP, \bbQ) = \sup_{f \in \calE^{f_n}}\left|\int_E f(x)d\bbP - \int_E f(x)d\bbQ\right|, \ x \in E
+D_{\calE}(\bbP, \bbQ) = \sup_{g \in \calE^{g_n}}\left|\int_E g(x)d\bbP - \int_E g(x)d\bbQ\right|, \ x \in E
 \end{equation}
 
-a measurable function that quantifies the discrepancy between two probability measures $\bbQ,\bbP \in \calP_{E}$, with $D_{\calE}(\bbP, \bbQ) = 0 \iff \bbQ= \bbP$, where $f$ is a measurable function in $\calE^{f_n}$, the set of $\calE$-measurable functions. Furthermore, let $\Gamma(\calY) \equiv \{f: E \rightarrow \calY \}$, a map $\calS_{\bbP}: \calG \subset \Gamma(\calY) \rightarrow \Gamma(\bbR)$ is a Stein operator over a Stein class $\calG$ if $\int_E \calS_{\bbP}[f]d\bbP = 0 \ \forall f \in \calG$ for any $\bbP$. Using the definition in \Cref{IPM}, the Stein discrepancy (SD) can be defined as 
+a measurable function that quantifies the discrepancy between two probability measures $\bbQ,\bbP \in \calP_{E}$, with $D_{\calE}(\bbP, \bbQ) = 0 \iff \bbQ= \bbP$, where $g$ is a measurable function in $\calE^{g_n}$, the set of $\calE$-measurable functions. Furthermore, let $\Gamma(\calY) \equiv \{g: E \rightarrow \calY \}$, a map $\calS_{\bbP}: \calG \subset \Gamma(E) \rightarrow \Gamma(\bbR)$ is a Stein operator over a Stein class $\calG$ if $\int_E \calS_{\bbP}[g]d\bbP = 0 \ \forall g \in \calG$ for any $\bbP$. Using the definition in \Cref{IPM}, the Stein discrepancy (SD) can be defined as 
 \begin{equation}\label{stein_discrepancy}
 SD_{\calS_{\bbP}[\calG]}(\bbP,\bbQ) = \sup_{f \in \calS_{\bbP}[\calG]} \left|\int_E f(x)d\bbP - \int_E f(x)d\bbQ \right| = \sup_{g \in \calG}\left|\int_E \calS_{\bbP}[g]d\bbQ \right|, \ x \in E
 \end{equation}
@@ -32,9 +32,9 @@ Given the definitions above, there are three remarks necessary for clarification
 
 \emph{Remark 3:} If the probability measure $\bbP$ has a $\calC^1$ density $p$, with respect to the Lebesgue measure, then we can consider the Stein operator of the form 
 \begin{equation}\label{score_function}
-\calT_{p}[g] = \langle \nabla \log p, g \rangle + \nabla g
+\calT_{p}[g] = \langle \nabla \log p, g \rangle + \langle \nabla, g\rangle
 \end{equation}
-where $\calC^1$ denotes the space of 1-time continuously differentiable functions, $\langle \cdot, \cdot \rangle$ denotes the inner product operation and $\nabla$ denotes the differential operator. The Stein operator in \Cref{score_function} does not depend on the normalising constant of $p$. In the rest of the paper we will focus on the measurable space $(\bbR^d, \calB(\bbR^d))$, hence we will use the Stein operator of \Cref{score_function}.
+where $\calC^1$ denotes the space of 1-time continuously differentiable functions, $\langle \cdot, \cdot \rangle$ denotes the inner product operation and $\nabla$ denotes the differential operator. Note that because of the $\nabla \log p$, the Stein operator in \Cref{score_function} does not depend on the normalising constant of $p$. In the rest of the paper we will focus on the measurable space $(\bbR^d, \calB(\bbR^d))$, hence we will use the Stein operator of \Cref{score_function}.
 \\
 
 \noindent In addition to Stein's method, we provide background on reproducing kernel Hilbert spaces (RKHS) as the concepts introduced here will be at the basis of SVGD. We start by defining a Hilbert space and then move on by describing the RKHS.

@@ -480,6 +480,7 @@
       \strng{authorbibnamehash}{909ad28dee0e35fd1d90d3a176e5d110}
       \strng{authornamehash}{909ad28dee0e35fd1d90d3a176e5d110}
       \strng{authorfullhash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \field{extraname}{1}
       \field{labelalpha}{LW16}
       \field{sortinit}{9}
       \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
@@ -591,6 +592,7 @@
       \strng{authorbibnamehash}{8671a211baa93cb5b6a8db12002d4c0d}
       \strng{authornamehash}{8671a211baa93cb5b6a8db12002d4c0d}
       \strng{authorfullhash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \field{extraname}{1}
       \field{labelalpha}{HL18}
       \field{sortinit}{9}
       \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
@@ -884,6 +886,269 @@
       \field{journaltitle}{Gaussian Processes for Machine Learning, by CE Rasmussen and CKI Williams. ISBN-13 978-0-262-18253-9}
       \field{title}{Gaussian Processes for Machine Learning}
       \field{year}{2006}
+    \endentry
+    \entry{peyre2019computational}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{2}{}{%
+        {{hash=8381a1d2d66d734a8454d63ac3344f53}{%
+           family={Peyr{é}},
+           familyi={P\bibinitperiod},
+           given={Gabriel},
+           giveni={G\bibinitperiod}}}%
+        {{hash=a771427291cb72a39e026a68b102335d}{%
+           family={Cuturi},
+           familyi={C\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Now Publishers, Inc.}%
+      }
+      \strng{namehash}{efcaddeaa43b470f6482ef9e27c218a1}
+      \strng{fullhash}{efcaddeaa43b470f6482ef9e27c218a1}
+      \strng{bibnamehash}{efcaddeaa43b470f6482ef9e27c218a1}
+      \strng{authorbibnamehash}{efcaddeaa43b470f6482ef9e27c218a1}
+      \strng{authornamehash}{efcaddeaa43b470f6482ef9e27c218a1}
+      \strng{authorfullhash}{efcaddeaa43b470f6482ef9e27c218a1}
+      \field{labelalpha}{PC+19}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Foundations and Trends{®} in Machine Learning}
+      \field{number}{5-6}
+      \field{title}{Computational optimal transport}
+      \field{volume}{11}
+      \field{year}{2019}
+      \field{pages}{355\bibrangedash 607}
+      \range{pages}{253}
+    \endentry
+    \entry{liu2017stein}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=e8c0010ab32e4255b70bd8d9fefdf5cd}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{e8c0010ab32e4255b70bd8d9fefdf5cd}
+      \strng{fullhash}{e8c0010ab32e4255b70bd8d9fefdf5cd}
+      \strng{bibnamehash}{e8c0010ab32e4255b70bd8d9fefdf5cd}
+      \strng{authorbibnamehash}{e8c0010ab32e4255b70bd8d9fefdf5cd}
+      \strng{authornamehash}{e8c0010ab32e4255b70bd8d9fefdf5cd}
+      \strng{authorfullhash}{e8c0010ab32e4255b70bd8d9fefdf5cd}
+      \field{labelalpha}{Liu17}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in neural information processing systems}
+      \field{title}{Stein variational gradient descent as gradient flow}
+      \field{year}{2017}
+      \field{pages}{3115\bibrangedash 3123}
+      \range{pages}{9}
+    \endentry
+    \entry{liu2018stein}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=e8c0010ab32e4255b70bd8d9fefdf5cd}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=63d92a7422ae89c6fc92636092efb6cc}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Dilin},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \strng{fullhash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \strng{bibnamehash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \strng{authorbibnamehash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \strng{authornamehash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \strng{authorfullhash}{909ad28dee0e35fd1d90d3a176e5d110}
+      \field{extraname}{2}
+      \field{labelalpha}{LW18}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems}
+      \field{title}{Stein variational gradient descent as moment matching}
+      \field{year}{2018}
+      \field{pages}{8854\bibrangedash 8863}
+      \range{pages}{10}
+    \endentry
+    \entry{liu2017stein2}{article}{}
+      \name{author}{4}{}{%
+        {{hash=621013bf54d3546375ad71f17f020b5b}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=e67314b379d3959e35d4acce17b95a6d}{%
+           family={Ramachandran},
+           familyi={R\bibinitperiod},
+           given={Prajit},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e8c0010ab32e4255b70bd8d9fefdf5cd}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=fd4017a79c015172c6a9540ace9061b0}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{df83681b9acfd53a0c867d0eb509f8f3}
+      \strng{fullhash}{0d9a1b6bbaa7733a3f9985949a776dbd}
+      \strng{bibnamehash}{df83681b9acfd53a0c867d0eb509f8f3}
+      \strng{authorbibnamehash}{df83681b9acfd53a0c867d0eb509f8f3}
+      \strng{authornamehash}{df83681b9acfd53a0c867d0eb509f8f3}
+      \strng{authorfullhash}{0d9a1b6bbaa7733a3f9985949a776dbd}
+      \field{labelalpha}{Liu+17}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1704.02399}
+      \field{title}{Stein variational policy gradient}
+      \field{year}{2017}
+    \endentry
+    \entry{wang2019nonlinear}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=63d92a7422ae89c6fc92636092efb6cc}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Dilin},
+           giveni={D\bibinitperiod}}}%
+        {{hash=e8c0010ab32e4255b70bd8d9fefdf5cd}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{d0465c8ab06e076deee722e945f84eac}
+      \strng{fullhash}{d0465c8ab06e076deee722e945f84eac}
+      \strng{bibnamehash}{d0465c8ab06e076deee722e945f84eac}
+      \strng{authorbibnamehash}{d0465c8ab06e076deee722e945f84eac}
+      \strng{authornamehash}{d0465c8ab06e076deee722e945f84eac}
+      \strng{authorfullhash}{d0465c8ab06e076deee722e945f84eac}
+      \field{labelalpha}{WL19}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Machine Learning}
+      \field{title}{Nonlinear Stein Variational Gradient Descent for Learning Diversified Mixture Models}
+      \field{year}{2019}
+      \field{pages}{6576\bibrangedash 6585}
+      \range{pages}{10}
+    \endentry
+    \entry{han2017stein}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8efb16654df241d885e2e492a3eda10a}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e8c0010ab32e4255b70bd8d9fefdf5cd}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \strng{fullhash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \strng{bibnamehash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \strng{authorbibnamehash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \strng{authornamehash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \strng{authorfullhash}{8671a211baa93cb5b6a8db12002d4c0d}
+      \field{extraname}{2}
+      \field{labelalpha}{HL17}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1704.05201}
+      \field{title}{Stein variational adaptive importance sampling}
+      \field{year}{2017}
+    \endentry
+    \entry{wang2019stein}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=63d92a7422ae89c6fc92636092efb6cc}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Dilin},
+           giveni={D\bibinitperiod}}}%
+        {{hash=b80379e3e9990be102dd43dff4a0882e}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Ziyang},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=ba9fb5b558d049700e79e68fc227db9c}{%
+           family={Bajaj},
+           familyi={B\bibinitperiod},
+           given={Chandrajit},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e8c0010ab32e4255b70bd8d9fefdf5cd}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{5214aaf22fedd44fcf0b94af49610756}
+      \strng{fullhash}{cede4e3ea32debcd57e3fcd4906d9333}
+      \strng{bibnamehash}{5214aaf22fedd44fcf0b94af49610756}
+      \strng{authorbibnamehash}{5214aaf22fedd44fcf0b94af49610756}
+      \strng{authornamehash}{5214aaf22fedd44fcf0b94af49610756}
+      \strng{authorfullhash}{cede4e3ea32debcd57e3fcd4906d9333}
+      \field{labelalpha}{Wan+19}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems}
+      \field{title}{Stein Variational Gradient Descent With Matrix-Valued Kernels}
+      \field{year}{2019}
+      \field{pages}{7834\bibrangedash 7844}
+      \range{pages}{11}
+    \endentry
+    \entry{dinh2014nice}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0976c27ff012c9556f4206afd4b48c1f}{%
+           family={Dinh},
+           familyi={D\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e7f73df1af7c68ac1fa70ee32d1da619}{%
+           family={Krueger},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{fab8fbfa8fcad0ce655d99d0a578d28f}
+      \strng{fullhash}{fab8fbfa8fcad0ce655d99d0a578d28f}
+      \strng{bibnamehash}{fab8fbfa8fcad0ce655d99d0a578d28f}
+      \strng{authorbibnamehash}{fab8fbfa8fcad0ce655d99d0a578d28f}
+      \strng{authornamehash}{fab8fbfa8fcad0ce655d99d0a578d28f}
+      \strng{authorfullhash}{fab8fbfa8fcad0ce655d99d0a578d28f}
+      \field{labelalpha}{DKB14}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1410.8516}
+      \field{title}{Nice: Non-linear independent components estimation}
+      \field{year}{2014}
     \endentry
   \enddatalist
 \endrefsection

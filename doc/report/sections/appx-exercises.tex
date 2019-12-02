@@ -3,4 +3,22 @@
 % Exercises section
 
 \section{Exercises}
-Show RBF is in Stein's class
+
+\subsection{Exercise 1}
+In practical applications of SVGD, the RBF kernel is used with the never explained argument that the RBF kernel is in the Stein class of $p$. In this exercise we will give more thought to the reasons why the RBF kernel can be used in SVGD.
+\\
+\noindent A kernel $k(x, x')$ is said to be in the Stein class of $p$, with $p$ the density of a probability measure $\bbP$ with respect to the Lebesgue measure, if $k(x, x')$ has continuous second order partial derivatives, and both $k(x, \cdot)$ and $k(\cdot, x)$ are in the Stein class of $p$ for any fixed $x$ \cite{liu2016kernelized}. 
+\\
+\\
+\noindent Verify that the RBF kernel $k(x, x') = \exp \left(-\frac{1}{2h^2}\parallel x - x'\parallel^2_2 \right)$ is in the Stein class for smooth densities with support on $\bbR^d$.
+
+\noindent \emph{Proof:} The proof of this result is trivial and hinges on the Taylor series expansion of exponential functions
+
+\begin{equation*}
+\exp(x) = \sum_{i=0}^{\infty} \frac{x^i}{i!}
+\end{equation*}
+
+From this it can easily be observed that for $k(x, x')$ the second order partial derivatives are continuous and that $k(x, \cdot)$ and $k(\cdot, x)$ have continuous second order derivatives, therefore the RBF kernel is in the Stein class of $p$.
+
+\subsection{Exercise 2}
+Prove closed form computation of Stein discrepancy.
