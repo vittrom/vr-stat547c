@@ -21,4 +21,50 @@ In practical applications of SVGD, the RBF kernel is used with the never explain
 From this it can easily be observed that for $k(x, x')$ the second order partial derivatives are continuous and that $k(x, \cdot)$ and $k(\cdot, x)$ have continuous second order derivatives, therefore the RBF kernel is in the Stein class of $p$.
 
 \subsection{Exercise 2}
-Prove closed form computation of Stein discrepancy.
+The work in the paper introducing SVGD has been motivated and enabled by the possibility of efficiently computing the kernelized Stein discrepancy. In this exercise we will derive the closed form solution of the kernelized Stein discrepancy. This exercise consists in a series of results from \cite{liu2016kernelized}.
+
+\begin{enumerate}
+	\item For a vector-valued function $\boldsymbol{g}$ to be in the Stein class of $p$ the following must hold:
+	\begin{equation*}
+	E_{\bbP}[\calS_{\bbP}[\boldsymbol{g}]] = E_{\bbP}[(\nabla \log p)\boldsymbol{g}^T + \nabla \boldsymbol{g}] = 0
+	\end{equation*}
+	Using this knowledge, prove that for densities $p$ and $q$ of $\bbP$ and $\bbQ$, respectively, for which $\bbQ \ll \bbP$ and $\boldsymbol{g}$ in the Stein class of $p$ we have
+	\begin{equation*}
+	E_{\bbP}[\calS_{\bbQ}[\boldsymbol{g}]] = E_{\bbP}[(\nabla \log q - \nabla \log p)\boldsymbol{g}^T] 
+	\end{equation*}
+	\emph{Proof:} The proof is straighforward using the fact that $\boldsymbol{g}$ is in the Stein class of p. Since $E_{\bbP}[\calS_{\bbP}[\boldsymbol{g}]] = 0$, 
+	\begin{equation*}
+	E_{\bbP}[\calS_{\bbQ}[\boldsymbol{g}]] = E_{\bbP}[\calS_{\bbQ}[\boldsymbol{g}] - \calS_{\bbP}[\boldsymbol{g}]] = E_{\bbP}[(\nabla \log q - \nabla \log p)\boldsymbol{g}^T] 
+	\end{equation*}
+	\item If $k(x, x')$ is in the Stein class of $p$, so is any $f \in \calH$. Why is this claim true?
+	\\
+	\emph{Solution:} To show that this is true we can use the reproducing property of the kernel $k$. We know that $k(x, x') = \langle k(x, \cdot), k(x', \cdot)\rangle_{\calH}$ with both $k(x, \cdot)$ and $k(x', \cdot)$ belonging to $\calH$. Furthermore, from the reproducing property of the kernel we know that $f(x) = \langle f(\cdot), k(\cdot, x)\rangle_{\calH}$ and $f(\cdot)$ is a function belonging to $\calH$. For $f(\cdot) = k(x, \cdot)$ we know that the claim holds, therefore, it must hold also for any other function $f(\cdot) \in \calH$. 
+	\item Using the results in the previous sub-questions and denoting 
+	\begin{equation*}
+	\begin{split}
+	u_q(x, x') = &(\nabla \log q(x))^Tk(x, x')\nabla \log q(x') + (\nabla \log q(x))^T \nabla_{x'}k(x, x')\\ &+ (\nabla_x k(x, x'))^T\nabla \log q(x') + \text{trace}(\nabla_{x, x'}k(x, x'))
+	\end{split}
+	\end{equation*}
+	show that 
+	\begin{equation*}
+	SD_{\calS_{\bbP}[\calG]}(\bbQ, \bbP) = E_{\bbP}[u_q(x, x')] 
+	\end{equation*}
+	where 
+	\begin{equation*}
+	SD_{\calS_{\bbP}[\calG]}(\bbQ, \bbP) = E_{\bbP}[(\nabla \log q(x) - \nabla \log p(x))^T k(x, x') (\nabla \log q(x') - \nabla \log p(x'))]
+	\end{equation*}
+	\emph{Proof:} Proving this result can be done applying the result in part 1. twice, first on $k(\cdot, x')$ for fixed $x'$ and then with fixed $x$. We start by denoting $v(x, x') = k(x, x')\nabla \log q(x') + \nabla_{x'}k(x, x') = \calS_{\bbQ}[k(x, x')]$. Applying the result in part 1. on $k(x, \cdot)$ with fixed $x$ we have
+	\begin{equation*}
+	\begin{split}
+	SD_{\calS_{\bbP}[\calG]}(\bbQ, \bbP) &= E_{\bbP}[(\nabla \log q(x) - \nabla \log p(x))^T k(x, x') (\nabla \log q(x') - \nabla \log p(x'))] \\ &=  E_{\bbP}[(\nabla \log q(x) - \nabla \log p(x))^T v(x, x')]
+	\end{split}
+	\end{equation*}
+	follows by expanding the product, adding and subtracting $\nabla_{x'}k(x, x')$ in the expectation and simplifying the expression based on the fact that $E_{\bbP}[\calS_{\bbP}[k(x, x')]] = 0$. The latter result holds because $k(\cdot, x')$ is in the Stein class of $p$ and so is $\nabla_{x'}k(\cdot, x')$ and therefore also $v(\cdot, x')$. Applying the result in part 1. on $v(\cdot, x')$ with fixed $x'$ we obtain
+	\begin{equation*}
+	\begin{split}
+SD_{\calS_{\bbP}[\calG]}(\bbQ, \bbP) &=  E_{\bbP}[(\nabla \log q(x) - \nabla \log p(x))^T (v(x, x') + \text{trace}(\nabla_x v(x, x')) - \text{trace}(\nabla_x v(x, x')))] \\
+	&=E_{\bbP}[(\nabla \log q(x)^T v(x, x') + \text{trace}(\nabla_x v(x, x'))]
+	\end{split}
+	\end{equation*}
+	where we used the trace to ensure that the result is a scalar, depending on the definition of Stein discrepancy other functions could be used. Lastly, noting that $\nabla_x v(x, x') = \nabla_x k(x, x')s_q(x')^T + \nabla_{x, x'}k(x, x')$ we obtain the desired result.
+\end{enumerate} 
